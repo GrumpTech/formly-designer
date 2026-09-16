@@ -1,0 +1,27 @@
+<formly-designer-menu-bar
+  [importers]="importerNames"
+  [exporters]="exporterNames"
+  (commandReceived)="handleCommand($event)"
+/>
+<matx-editor-app
+  [convertFn]="convert"
+  [convertBackFn]="convertBack"
+  extension="json"
+  defaultContent="[]"
+  [importManager]="importManager"
+  [exportManager]="exportManager"
+  [onCommand]="onFileCommand"
+>
+  @for (
+    tab of tabs();
+    track `${tab.modificationState}${tab.filename}`;
+    let index = $index
+  ) {
+    <formly-editor
+      [fields]="tab.data"
+      [hidden]="tab !== selectedTab()"
+      [onCommand]="onEditCommand"
+      (dataChange)="handleDataChange(tab)"
+    />
+  }
+</matx-editor-app>

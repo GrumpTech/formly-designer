@@ -1,0 +1,20 @@
+{
+  "/api": {
+    "target": "https://localhost:5001/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  },
+  "/file-service": {
+    "target": "http://localhost:4202/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/file-service": ""
+    }
+  }
+}

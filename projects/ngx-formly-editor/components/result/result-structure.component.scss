@@ -1,0 +1,32 @@
+.tree-node-header,
+.tree-node-header--selected {
+  padding: 5px;
+  border-radius: 4px;
+  background-color: rgb(256, 256, 256, 0.8);
+
+  em {
+    color: gray;
+  }
+
+  .icon-container {
+    display: inline-block;
+    width: 30px;
+    position: relative;
+    mat-icon {
+      font-size: 18px;
+      position: absolute;
+      top: 1px;
+      right: -5px;
+    }
+  }
+
+  &--selected {
+    background-color: rgb(240, 240, 240);
+  }
+}
+
+.tree {
+  .tree-node-header {
+    background: none;
+  }
+}

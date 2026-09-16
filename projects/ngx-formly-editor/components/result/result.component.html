@@ -1,0 +1,44 @@
+<matx-panel headerTitle="Form">
+  <matx-panel-header-button
+    icon="highlight_alt"
+    tooltip="Select fields"
+    (click)="setMode('select')"
+    [selected]="mode() === 'select'"
+  />
+  <matx-panel-header-button
+    icon="density_small"
+    tooltip="Structure"
+    (click)="setMode('structure')"
+    [selected]="mode() === 'structure'"
+  />
+  <matx-panel-header-button
+    icon="code"
+    tooltip="View code"
+    (click)="setMode('code')"
+    [selected]="mode() === 'code'"
+  />
+  <matx-panel-header-button
+    icon="play_arrow"
+    tooltip="Test form"
+    (click)="setMode('test')"
+    [selected]="mode() === 'test'"
+  />
+  @switch (mode()) {
+    @case ("structure") {
+      <formly-designer-result-structure />
+    }
+    @case ("code") {
+      <b-code-editor
+        [disabled]="true"
+        [data]="data()"
+        [formatter]="formatter"
+      />
+    }
+    @case ("select") {
+      <formly-designer-result-form />
+    }
+    @case ("test") {
+      <formly-designer-result-test />
+    }
+  }
+</matx-panel>

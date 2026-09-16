@@ -2,7 +2,7 @@
 
 Generate frontends. Instantly.
 
-Formly Designer is built on top of Formly and consists of a collection of libraries that provide a visual form designer and a comprehensive library of frontend components. Together, these libraries make it possible to instantly generate a complete frontend from an OpenAPI specification.
+Formly Designer is built on top of Formly and consists of a collection of libraries that provide a visual form designer and a library of frontend components. Together, these libraries make it possible to instantly generate a frontend from an OpenAPI specification.
 
 - A live [demo](https://grumptech.github.io/demos/formly-designer) is available as a playground where you can edit Formly forms and generate a frontend from an OpenApi definition.
 - Start developing quickly with Formly Designer in your own project using this [sample application](https://github.com/GrumpTech/formly-designer-sample#formly-designer-sample) as a foundation.

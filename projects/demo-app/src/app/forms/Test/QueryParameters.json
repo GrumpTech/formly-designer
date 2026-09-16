@@ -1,0 +1,47 @@
+[
+  {
+    "fieldGroup": [
+      {
+        "fieldGroup": [
+          {
+            "key": "query1",
+            "props": {
+              "label": "Query1",
+              "required": true
+            },
+            "type": "integer"
+          },
+          {
+            "key": "query2",
+            "props": {
+              "label": "Query2",
+              "required": true
+            },
+            "type": "integer"
+          }
+        ],
+        "key": "query",
+        "props": {
+          "required": true
+        },
+        "type": "object"
+      },
+      {
+        "key": "buttons",
+        "props": {
+          "action": "send-and-show-message",
+          "autoRun": true,
+          "inputGroups": [
+            "query"
+          ],
+          "label": "Select",
+          "method": "get",
+          "responseType": "text",
+          "url": "/Test/QueryParameters"
+        },
+        "type": "load-action"
+      }
+    ],
+    "type": "page"
+  }
+]

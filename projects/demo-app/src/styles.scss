@@ -1,0 +1,23 @@
+html,
+body {
+  height: 100%;
+  min-width: 800px;
+}
+body {
+  margin: 0;
+  overflow-y: hidden;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* material fix for height mat-form-field */
+.formly-fixed-height-mat-form-field {
+  mat-form-field {
+    height: 78px;
+  }
+  mat-checkbox {
+    margin-top: -8px;
+  }
+  a[mat-button] {
+    margin-top: -4px;
+  }
+}

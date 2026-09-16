@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  &.hidden {
+    display: none;
+  }
+}
+.result,
+.editor,
+.editor--hidden,
+.test-value {
+  box-sizing: border-box;
+}
+.editor--hidden {
+  display: none;
+}
+.result {
+  min-width: 0;
+  max-width: 1000px;
+  flex: 2;
+  margin-right: 1px;
+}
+.editor,
+.test-value {
+  min-width: 0;
+  max-width: 500px;
+  flex: 1;
+}

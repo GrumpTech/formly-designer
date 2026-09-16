@@ -1,0 +1,37 @@
+[
+  {
+    "fieldGroup": [
+      {
+        "fieldGroup": [
+          {
+            "key": "id",
+            "props": {
+              "label": "Id",
+              "required": true
+            },
+            "type": "integer"
+          }
+        ],
+        "key": "body",
+        "props": {
+          "required": true
+        },
+        "type": "object"
+      },
+      {
+        "key": "buttons",
+        "props": {
+          "action": "send-and-clear",
+          "inputGroups": [
+            "body"
+          ],
+          "label": "Delete",
+          "method": "delete",
+          "url": "/Default/Application/Delete"
+        },
+        "type": "action"
+      }
+    ],
+    "type": "page"
+  }
+]

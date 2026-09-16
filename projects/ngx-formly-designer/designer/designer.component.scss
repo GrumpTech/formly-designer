@@ -1,0 +1,14 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+formly-designer-menu-bar {
+  border: 1px solid lightgray;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+formly-editor {
+  height: 100%;
+}

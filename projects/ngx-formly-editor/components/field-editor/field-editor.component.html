@@ -1,0 +1,29 @@
+<matx-panel headerTitle="Field">
+  <matx-panel-header-button
+    icon="add"
+    tooltip="Add field"
+    (click)="setMode('add')"
+    [selected]="mode() === 'add'"
+  />
+  <matx-panel-header-button
+    icon="edit"
+    tooltip="Edit field"
+    (click)="setMode('edit')"
+    [selected]="mode() === 'edit'"
+  />
+  <matx-panel-header-button
+    icon="code"
+    tooltip="Code"
+    (click)="setMode('code')"
+    [selected]="mode() === 'code'"
+  />
+  @if (mode() === "add") {
+    <formly-designer-field-editor-add />
+  }
+  @if (mode() === "edit") {
+    <formly-designer-field-editor-edit />
+  }
+  @if (mode() === "code") {
+    <formly-designer-field-editor-code />
+  }
+</matx-panel>

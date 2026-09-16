@@ -1,0 +1,47 @@
+html,
+body {
+  height: 100%;
+  min-width: 800px;
+}
+body {
+  margin: 0;
+  overflow-y: hidden;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* material fix for height mat-form-field */
+.formly-fixed-height-mat-form-field {
+  mat-form-field {
+    height: 78px;
+  }
+  mat-checkbox {
+    margin-top: -8px;
+  }
+  a[mat-button] {
+    margin-top: -4px;
+  }
+}
+
+/* styles for primeng components */
+formly-wrapper-primeng-form-field {
+  label {
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+  }
+  .p-inputtext,
+  .p-inputwrapper {
+    width: 100%;
+  }
+  .p-error {
+    color: red;
+  }
+  formly-field-primeng-checkbox {
+    margin-top: 5px;
+    display: block;
+    label {
+      margin-left: 5px;
+      display: inline;
+    }
+  }
+}

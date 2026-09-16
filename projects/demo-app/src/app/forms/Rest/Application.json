@@ -1,0 +1,214 @@
+[
+  {
+    "fieldGroup": [
+      {
+        "key": "buttons",
+        "props": {
+          "action": "load",
+          "autoRun": true,
+          "inputGroups": [],
+          "label": "Select",
+          "method": "get",
+          "responseType": "json",
+          "url": "/Rest/Application"
+        },
+        "type": "load-action"
+      },
+      {
+        "fieldArray": {
+          "defaultValue": {},
+          "fieldGroup": [
+            {
+              "key": "id",
+              "props": {
+                "label": "Id",
+                "required": true,
+                "url": "Rest/Application/{id}"
+              },
+              "type": "link"
+            },
+            {
+              "key": "name",
+              "props": {
+                "label": "Name"
+              },
+              "type": "string"
+            },
+            {
+              "key": "description",
+              "props": {
+                "disabled": true,
+                "label": "Description",
+                "readonly": true
+              },
+              "type": "string"
+            },
+            {
+              "fieldArray": {
+                "defaultValue": {},
+                "fieldGroup": [
+                  {
+                    "key": "id",
+                    "props": {
+                      "label": "Id",
+                      "required": true
+                    },
+                    "type": "integer"
+                  },
+                  {
+                    "key": "applicationId",
+                    "props": {
+                      "label": "Application",
+                      "labelKey": "name",
+                      "required": true,
+                      "url": "/Rest/Application",
+                      "valueKey": "id"
+                    },
+                    "type": "url-select"
+                  },
+                  {
+                    "defaultValue": "",
+                    "expressions": {},
+                    "key": "name",
+                    "props": {
+                      "label": "Name",
+                      "minLength": 1,
+                      "required": true
+                    },
+                    "type": "string"
+                  },
+                  {
+                    "defaultValue": "",
+                    "expressions": {},
+                    "key": "definition",
+                    "props": {
+                      "label": "Definition",
+                      "minLength": 1,
+                      "required": true
+                    },
+                    "type": "string"
+                  },
+                  {
+                    "key": "numberInRange",
+                    "props": {
+                      "label": "Number in range",
+                      "max": 7,
+                      "min": 3,
+                      "required": true
+                    },
+                    "type": "integer"
+                  },
+                  {
+                    "key": "numberGreaterThan",
+                    "props": {
+                      "label": "Number greater than",
+                      "max": 2147483647,
+                      "min": 3,
+                      "required": true
+                    },
+                    "type": "integer"
+                  },
+                  {
+                    "expressions": {},
+                    "key": "requiredValue",
+                    "props": {
+                      "label": "Required value",
+                      "required": true
+                    },
+                    "type": "integer"
+                  },
+                  {
+                    "key": "nullableValue",
+                    "props": {
+                      "label": "Nullable value"
+                    },
+                    "type": "integer"
+                  },
+                  {
+                    "defaultValue": "",
+                    "expressions": {},
+                    "key": "minStringLength",
+                    "props": {
+                      "label": "Min string length",
+                      "maxLength": 2147483647,
+                      "minLength": 3,
+                      "required": true
+                    },
+                    "type": "string"
+                  },
+                  {
+                    "key": "maxStringLength",
+                    "props": {
+                      "label": "Max string length",
+                      "maxLength": 5,
+                      "minLength": 0
+                    },
+                    "type": "string"
+                  },
+                  {
+                    "defaultValue": "",
+                    "expressions": {},
+                    "key": "regex",
+                    "props": {
+                      "label": "Regex",
+                      "minLength": 1,
+                      "pattern": "[a-z]*",
+                      "required": true
+                    },
+                    "type": "string"
+                  },
+                  {
+                    "key": "dateTime",
+                    "props": {
+                      "label": "Date time",
+                      "required": true
+                    },
+                    "type": "datetimepicker"
+                  },
+                  {
+                    "defaultValue": "",
+                    "expressions": {},
+                    "key": "compare",
+                    "props": {
+                      "label": "Compare",
+                      "minLength": 1,
+                      "required": true
+                    },
+                    "type": "string"
+                  }
+                ],
+                "props": {
+                  "required": true
+                },
+                "type": "object"
+              },
+              "key": "forms",
+              "props": {
+                "addButtonLabel": "Add form",
+                "emptyArrayMessage": "No forms found",
+                "label": "Forms",
+                "readonly": true
+              },
+              "type": "array"
+            }
+          ],
+          "props": {
+            "required": true
+          },
+          "type": "object"
+        },
+        "hide": true,
+        "key": "result",
+        "props": {
+          "addButtonLabel": "Add",
+          "disabled": true,
+          "emptyArrayMessage": "No items found",
+          "readonly": true,
+          "required": true
+        },
+        "type": "array"
+      }
+    ],
+    "type": "page"
+  }
+]

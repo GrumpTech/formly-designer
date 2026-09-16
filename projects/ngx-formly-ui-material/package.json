@@ -1,0 +1,34 @@
+{
+  "name": "@grumptech/ngx-formly-ui-material",
+  "version": "1.0.0",
+  "description": "A collection of components extending `@ngx-formly/material` and `@grumptech/ngx-formly-ui-base`, designed for building frontend applications.",
+  "author": "GrumpTech",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrumpTech/formly-designer.git"
+  },
+  "keywords": [
+    "Formly Designer",
+    "components",
+    "material",
+    "angular"
+  ],
+  "bugs": {
+    "url": "https://github.com/GrumpTech/formly-designer/issues"
+  },
+  "homepage": "https://github.com/GrumpTech/formly-designer#readme",
+  "peerDependencies": {
+    "@angular/core": ">=19.0.0",
+    "@angular/forms": ">=19.0.0",
+    "@angular/material": ">=19.0.0",
+    "@angular/router": ">=19.0.0",
+    "@ngx-formly/core": ">=7.0.0",
+    "@ngx-formly/material": ">=7.0.0",
+    "@grumptech/ngx-formly-ui-base": "^1.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

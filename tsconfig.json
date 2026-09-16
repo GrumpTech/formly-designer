@@ -1,0 +1,43 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": "./projects",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "paths": {
+      "@grumptech/formly-field-validator": ["./dist/formly-field-validator"],
+      "@grumptech/formly-field-validator/*": [
+        "./dist/formly-field-validator/*"
+      ],
+      "@grumptech/formly-converters": ["./dist/formly-converters"],
+      "@grumptech/ngx-formly-designer": ["./dist/ngx-formly-designer"],
+      "@grumptech/ngx-formly-editor": ["./dist/ngx-formly-editor"],
+      "@grumptech/ngx-formly-importers": ["./dist/ngx-formly-importers"],
+      "@grumptech/ngx-formly-ui-base": ["./dist/ngx-formly-ui-base"],
+      "@grumptech/ngx-formly-ui-editor": ["./dist/ngx-formly-ui-editor"],
+      "@grumptech/ngx-formly-ui-material": ["./dist/ngx-formly-ui-material"],
+      "@grumptech/ngx-formly-ui-prime-ng": ["./dist/ngx-formly-ui-prime-ng"],
+      "@grumptech/ngx-formly-form-loaders": ["./dist/ngx-formly-form-loaders"]
+    },
+    "experimentalDecorators": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "target": "es2022",
+    "module": "es2022",
+    "lib": ["es2022", "dom"]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

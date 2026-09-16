@@ -1,0 +1,58 @@
+<mat-toolbar color="primary">
+  <a mat-button routerLink="/" class="home">Formly Designer</a>
+  <a
+    mat-button
+    [routerLink]="urlPrefix || '/material'"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Designer</a
+  >
+  <a
+    mat-button
+    [routerLink]="(urlPrefix || '/material') + '/app'"
+    routerLinkActive="active"
+    >App</a
+  >
+  <a
+    mat-button
+    [routerLink]="(urlPrefix || '/material') + '/open-api-client'"
+    routerLinkActive="active"
+    >OpenAPI client</a
+  >
+  <a
+    mat-button
+    [routerLink]="materialLink"
+    routerLinkActive="active"
+    queryParamsHandling="preserve"
+    preserveFragment="true"
+    [disabled]="urlPrefix === '/material'"
+    class="align-right"
+    >Material</a
+  >
+  <a
+    mat-button
+    [routerLink]="primeNgLink"
+    routerLinkActive="active"
+    queryParamsHandling="preserve"
+    preserveFragment="true"
+    [disabled]="urlPrefix === '/prime-ng'"
+    >PrimeNG</a
+  >
+  @if (showSettings) {
+    <a
+      matIconButton
+      class="settings"
+      matTooltip="Settings"
+      routerLink="settings"
+      routerLinkActive="active"
+    >
+      <mat-icon>settings</mat-icon>
+      @if (showSettingsWarning) {
+        <span class="warning">.</span>
+      }
+    </a>
+  }
+</mat-toolbar>
+<div class="container">
+  <router-outlet />
+</div>

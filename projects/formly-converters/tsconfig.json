@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "../../dist/formly-converters",
+    "declaration": true,
+    "paths": {
+      "@grumptech/formly-field-validator": ["../../dist/formly-field-validator"]
+    }
+  },
+  "files": ["index.ts"]
+}

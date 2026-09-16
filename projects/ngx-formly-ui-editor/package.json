@@ -1,0 +1,37 @@
+{
+  "name": "@grumptech/ngx-formly-ui-editor",
+  "version": "1.0.3",
+  "description": "A collection of components designed for use in the designer and editor of `@grumptech/formly-designer` and `@grumptech/formly-editor`.",
+  "author": "GrumpTech",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrumpTech/formly-designer.git"
+  },
+  "keywords": [
+    "Formly Designer",
+    "components",
+    "editor",
+    "customization"
+  ],
+  "bugs": {
+    "url": "https://github.com/GrumpTech/formly-designer/issues"
+  },
+  "homepage": "https://github.com/GrumpTech/formly-designer#readme",
+  "peerDependencies": {
+    "@angular/common": ">=19.0.0",
+    "@angular/core": ">=19.0.0",
+    "@angular/forms": ">=19.0.0",
+    "@angular/material": ">=19.0.0",
+    "@angular/cdk": ">=19.0.0",
+    "@ngx-formly/core": ">=7.0.0",
+    "@grumptech/ngx-matx": "^1.0.0",
+    "@grumptech/ngx-basic-ui": "^1.0.0",
+    "@grumptech/formly-converters": "^1.0.3",
+    "rxjs": "^7.8.2"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

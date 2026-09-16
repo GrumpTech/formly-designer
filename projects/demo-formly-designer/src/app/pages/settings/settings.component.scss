@@ -1,0 +1,19 @@
+.container {
+  padding: 20px;
+  width: 800px;
+  max-width: 100%;
+}
+
+.warning {
+  color: red;
+  margin-bottom: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.buttons {
+  margin-top: 20px;
+  justify-content: flex-end;
+}

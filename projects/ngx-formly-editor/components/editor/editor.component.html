@@ -1,0 +1,16 @@
+@if (!hidden()) {
+  <div class="result">
+    <formly-designer-result
+      [mode]="mode"
+      (modeChange)="handleModeChange($event)"
+    />
+  </div>
+  <div [class]="mode === 'test' ? 'editor--hidden' : 'editor'">
+    <formly-designer-field-editor />
+  </div>
+  @if (mode === "test") {
+    <div class="test-value">
+      <formly-designer-test-value />
+    </div>
+  }
+}

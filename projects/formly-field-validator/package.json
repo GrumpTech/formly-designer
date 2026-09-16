@@ -1,0 +1,35 @@
+{
+  "name": "@grumptech/formly-field-validator",
+  "version": "1.0.1",
+  "description": "Part of the Formly Designer libraries. Creates an Ajv validator from a FormlyFieldConfig, making it easy to validate Formly form definitions.",
+  "author": "GrumpTech",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrumpTech/formly-designer.git"
+  },
+  "keywords": [
+    "Formly Designer",
+    "Formly",
+    "validator",
+    "form definition"
+  ],
+  "bugs": {
+    "url": "https://github.com/GrumpTech/formly-designer/issues"
+  },
+  "homepage": "https://github.com/GrumpTech/formly-designer#readme",
+  "scripts": {
+    "build": "npm run build:dir && npm run build:mjs && npm run build:copy-all && npm run build:index",
+    "build:dir": "mkdirp \"../../dist/formly-field-validator\"",
+    "build:mjs": "tsx build/create-ajv-validator.ts",
+    "build:dmts": "tsc ../../dist/formly-field-validator/validator.mjs --declaration --emitDeclarationOnly --allowJS",
+    "build:copy-dmts": "cp src/validator.d.mts ../../dist/formly-field-validator/validator.d.mts",
+    "build:copy-license": "cp ../../LICENSE ../../dist/formly-field-validator",
+    "build:copy-package-and-readme": "cp README.md package.json ../../dist/formly-field-validator",
+    "build:copy-all": "npm run build:copy-dmts && npm run build:copy-license && npm run build:copy-package-and-readme",
+    "build:index": "tsc --declaration"
+  },
+  "peerDependencies": {
+    "@ngx-formly/core": "^7.1.0"
+  }
+}

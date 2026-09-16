@@ -1,0 +1,309 @@
+[
+  {
+    "fieldGroup": [
+      {
+        "key": "leftSidebar",
+        "type": "app-navigation"
+      },
+      {
+        "key": "header",
+        "type": "app-breadcrumb"
+      }
+    ],
+    "props": {
+      "menu": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "AddOrUpdate",
+                  "url": "Default/Application/AddOrUpdate"
+                },
+                {
+                  "children": [],
+                  "name": "Delete",
+                  "url": "Default/Application/Delete"
+                },
+                {
+                  "children": [],
+                  "name": "GetAll",
+                  "url": "Default/Application/GetAll"
+                },
+                {
+                  "children": [],
+                  "name": "PatchAll",
+                  "url": "Default/Application/PatchAll"
+                }
+              ],
+              "name": "Application"
+            }
+          ],
+          "name": "Default"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "New",
+                  "url": "Rest/Application/new"
+                }
+              ],
+              "name": "Application",
+              "url": "Rest/Application"
+            },
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "New",
+                  "url": "Rest/Form/new"
+                }
+              ],
+              "name": "Form",
+              "url": "Rest/Form"
+            }
+          ],
+          "name": "Rest"
+        },
+        {
+          "children": [
+            {
+              "children": [],
+              "name": "QueryParameters",
+              "url": "Test/QueryParameters"
+            }
+          ],
+          "name": "Test"
+        }
+      ],
+      "pages": [
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Default"
+            },
+            {
+              "label": "Application"
+            },
+            {
+              "label": "Add Or Update"
+            }
+          ],
+          "url": "Default/Application/AddOrUpdate"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Default"
+            },
+            {
+              "label": "Application"
+            },
+            {
+              "label": "Delete"
+            }
+          ],
+          "url": "Default/Application/Delete"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Default"
+            },
+            {
+              "label": "Application"
+            },
+            {
+              "label": "Get"
+            },
+            {
+              "label": "{Id}"
+            }
+          ],
+          "url": "Default/Application/Get/{Id}"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Default"
+            },
+            {
+              "label": "Application"
+            },
+            {
+              "label": "Get All"
+            }
+          ],
+          "url": "Default/Application/GetAll"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Default"
+            },
+            {
+              "label": "Application"
+            },
+            {
+              "label": "Patch All"
+            }
+          ],
+          "url": "Default/Application/PatchAll"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Rest"
+            },
+            {
+              "label": "Application"
+            }
+          ],
+          "url": "Rest/Application"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Rest"
+            },
+            {
+              "label": "Application",
+              "url": "Rest/Application"
+            },
+            {
+              "label": "New"
+            }
+          ],
+          "url": "Rest/Application/new"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Rest"
+            },
+            {
+              "label": "Application",
+              "url": "Rest/Application"
+            },
+            {
+              "label": "{Id}"
+            }
+          ],
+          "url": "Rest/Application/{Id}"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Rest"
+            },
+            {
+              "label": "Application",
+              "url": "Rest/Application"
+            },
+            {
+              "label": "{Id}",
+              "url": "Rest/Application/{Id}"
+            },
+            {
+              "label": "Patch"
+            }
+          ],
+          "url": "Rest/Application/{Id}/patch"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Rest"
+            },
+            {
+              "label": "Form"
+            }
+          ],
+          "url": "Rest/Form"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Rest"
+            },
+            {
+              "label": "Form",
+              "url": "Rest/Form"
+            },
+            {
+              "label": "New"
+            }
+          ],
+          "url": "Rest/Form/new"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Rest"
+            },
+            {
+              "label": "Form",
+              "url": "Rest/Form"
+            },
+            {
+              "label": "{Id}"
+            }
+          ],
+          "url": "Rest/Form/{Id}"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Rest"
+            },
+            {
+              "label": "Form",
+              "url": "Rest/Form"
+            },
+            {
+              "label": "{Id}",
+              "url": "Rest/Form/{Id}"
+            },
+            {
+              "label": "Patch"
+            }
+          ],
+          "url": "Rest/Form/{Id}/patch"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Test"
+            },
+            {
+              "label": "Get"
+            },
+            {
+              "label": "{key1}"
+            },
+            {
+              "label": "{key2}"
+            }
+          ],
+          "url": "Test/Get/{key1}/{key2}"
+        },
+        {
+          "breadcrumbParts": [
+            {
+              "label": "Test"
+            },
+            {
+              "label": "Query Parameters"
+            }
+          ],
+          "url": "Test/QueryParameters"
+        }
+      ]
+    },
+    "type": "app"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "rootDir": "./src",
+    "outDir": "./../../dist/formly-field-validator",
+    "paths": {
+      "@grumptech/formly-field-validator/*": [
+        "../../dist/formly-field-validator/*"
+      ]
+    }
+  },
+  "files": ["src/index.ts"]
+}

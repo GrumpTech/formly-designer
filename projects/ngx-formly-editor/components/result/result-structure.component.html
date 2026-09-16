@@ -1,0 +1,23 @@
+<matx-drag-drop-tree
+  [nodes]="(nodes | async) ?? []"
+  [trackBy]="treeTrackBy"
+  (dropped)="handleDropped($event)"
+  class="tree"
+>
+  <ng-template #headerTemplate let-data="data">
+    <div
+      (click)="handleClick(data, $event)"
+      [class]="'tree-node-header' + (isSelected(data) ? '--selected' : '')"
+    >
+      <strong title="type">[{{ getFieldType(data) }}]</strong>
+      <span title="key"> {{ data?.key }} </span>
+      <em title="label">{{ data?.props?.label }}</em>
+      @if (getWarning(data)) {
+        <span class="icon-container">
+          &nbsp;
+          <mat-icon [title]="getWarning(data)" color="warn">warning</mat-icon>
+        </span>
+      }
+    </div>
+  </ng-template>
+</matx-drag-drop-tree>

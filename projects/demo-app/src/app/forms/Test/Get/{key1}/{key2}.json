@@ -1,0 +1,49 @@
+[
+  {
+    "fieldGroup": [
+      {
+        "fieldGroup": [
+          {
+            "expressions": {},
+            "key": "key1",
+            "props": {
+              "label": "Key1",
+              "required": true
+            },
+            "type": "integer"
+          },
+          {
+            "expressions": {},
+            "key": "key2",
+            "props": {
+              "label": "Key2",
+              "required": true
+            },
+            "type": "integer"
+          }
+        ],
+        "key": "path",
+        "props": {
+          "required": true
+        },
+        "type": "object"
+      },
+      {
+        "key": "buttons",
+        "props": {
+          "action": "send-and-show-message",
+          "autoRun": true,
+          "inputGroups": [
+            "path"
+          ],
+          "label": "Select",
+          "method": "get",
+          "responseType": "text",
+          "url": "/Test/Get/{key1}/{key2}"
+        },
+        "type": "load-action"
+      }
+    ],
+    "type": "page"
+  }
+]

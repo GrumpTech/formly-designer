@@ -1,0 +1,70 @@
+[
+  {
+    "fieldGroup": [
+      {
+        "fieldGroup": [
+          {
+            "expressions": {},
+            "key": "Id",
+            "props": {
+              "label": "Id",
+              "required": true
+            },
+            "type": "integer"
+          }
+        ],
+        "key": "path",
+        "props": {
+          "required": true
+        },
+        "type": "object"
+      },
+      {
+        "fieldGroup": [
+          {
+            "defaultValue": "",
+            "expressions": {},
+            "key": "name",
+            "props": {
+              "label": "Name",
+              "minLength": 1,
+              "required": true
+            },
+            "type": "string"
+          },
+          {
+            "defaultValue": "",
+            "expressions": {},
+            "key": "definition",
+            "props": {
+              "label": "Definition",
+              "minLength": 1,
+              "required": true
+            },
+            "type": "string"
+          }
+        ],
+        "key": "body",
+        "props": {
+          "required": true
+        },
+        "type": "object"
+      },
+      {
+        "key": "buttons",
+        "props": {
+          "action": "send-and-clear",
+          "inputGroups": [
+            "path",
+            "body"
+          ],
+          "label": "Patch",
+          "method": "patch",
+          "url": "/Rest/Form/{Id}"
+        },
+        "type": "action"
+      }
+    ],
+    "type": "page"
+  }
+]

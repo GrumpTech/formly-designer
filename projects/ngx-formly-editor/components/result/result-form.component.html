@@ -1,0 +1,20 @@
+<form [formGroup]="form">
+  <formly-form
+    [fields]="formlyFields()"
+    [form]="form"
+    [model]="model()"
+    inert="true"
+  />
+</form>
+<div class="overlay">
+  @for (field of overlayFields(); track overlayFieldTrackBy($index, field)) {
+    <div
+      [class]="'overlay_field' + (isSelected(field.field) ? '--selected' : '')"
+      [style.left]="field.rect.left + 'px'"
+      [style.top]="field.rect.top + 'px'"
+      [style.right]="field.rect.right + 'px'"
+      [style.bottom]="field.rect.bottom + 'px'"
+      (click)="handleClick(field.field, $event)"
+    ></div>
+  }
+</div>

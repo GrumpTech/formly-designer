@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@grumptech/formly-field-validator": ["./dist/formly-field-validator"],
+      "@grumptech/formly-field-validator/*": [
+        "./dist/formly-field-validator/*"
+      ],
+      "@grumptech/formly-converters": ["./dist/formly-converters"],
+
+      "@grumptech/ngx-formly-designer": ["./projects/ngx-formly-designer"],
+      "@grumptech/ngx-formly-editor": ["./projects/ngx-formly-editor"],
+      "@grumptech/ngx-formly-importers": ["./projects/ngx-formly-importers"],
+      "@grumptech/ngx-formly-ui-base": ["./projects/ngx-formly-ui-base"],
+      "@grumptech/ngx-formly-ui-editor": ["./projects/ngx-formly-ui-editor"],
+      "@grumptech/ngx-formly-ui-material": [
+        "./projects/ngx-formly-ui-material"
+      ],
+      "@grumptech/ngx-formly-ui-prime-ng": [
+        "./projects/ngx-formly-ui-prime-ng"
+      ],
+      "@grumptech/ngx-formly-form-loaders": [
+        "./projects/ngx-formly-form-loaders"
+      ]
+    }
+  }
+}

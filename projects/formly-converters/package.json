@@ -1,0 +1,29 @@
+{
+  "name": "@grumptech/formly-converters",
+  "version": "1.0.3",
+  "description": "A collection of converter functions used across the Formly Designer libraries.",
+  "author": "GrumpTech",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrumpTech/formly-designer.git"
+  },
+  "keywords": [
+    "Formly Designer",
+    "converters"
+  ],
+  "bugs": {
+    "url": "https://github.com/GrumpTech/formly-designer/issues"
+  },
+  "homepage": "https://github.com/GrumpTech/formly-designer#readme",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c && rm -r ../../dist/formly-converters/src && cp package.json README.md ../../LICENSE ../../dist/formly-converters",
+    "test": "mocha -r tsx tests/**/*.spec.ts"
+  },
+  "peerDependencies": {
+    "@ngx-formly/core": "^7.1.0",
+    "@grumptech/formly-field-validator": "^1.0.1",
+    "json-stable-stringify": "^1.3.0"
+  }
+}

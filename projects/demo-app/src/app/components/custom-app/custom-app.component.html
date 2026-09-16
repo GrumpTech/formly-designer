@@ -1,0 +1,10 @@
+<b-navigation [menu]="menu" />
+<div class="container">
+  <b-breadcrumb
+    [class.margin]="breadcrumbParts().length"
+    [parts]="breadcrumbParts()"
+  />
+  <div class="page-container">
+    <router-outlet />
+  </div>
+</div>
