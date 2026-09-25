@@ -6,9 +6,14 @@
     inert="true"
   />
 </form>
-<div class="overlay">
+<div #overlay class="overlay">
   @for (field of overlayFields(); track overlayFieldTrackBy($index, field)) {
     <div
+      cdkDrag
+      cdkDragBoundary=".overlay"
+      [attr.data-idx]="$index"
+      (cdkDragMoved)="dragMove(field, $event)"
+      (cdkDragEnded)="drop(field.field, $event)"
       [class]="'overlay_field' + (isSelected(field.field) ? '--selected' : '')"
       [style.left]="field.rect.left + 'px'"
       [style.top]="field.rect.top + 'px'"

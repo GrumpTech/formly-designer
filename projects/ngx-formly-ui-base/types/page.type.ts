@@ -22,16 +22,13 @@ import { IMessageService, PageProps } from '../models';
   selector: 'formly-page',
   template: `
     <div class="max-width-container">
-      @for (f of selectionFields; track f) {
-        <formly-field [field]="f" />
-      }
       @if (otherFields.length) {
         <div>
           Add fields using one of the keys path, query, body, result, buttons,
           or result-buttons
         </div>
       }
-      @for (f of otherFields; track f) {
+      @for (f of selectionFields; track f) {
         <formly-field [field]="f" />
       }
       <div class="clearfix">
@@ -59,6 +56,9 @@ import { IMessageService, PageProps } from '../models';
           }
         </div>
       </div>
+    }
+    @for (f of otherFields; track f) {
+      <formly-field [field]="f" />
     }
   `,
   styles: [

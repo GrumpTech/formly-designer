@@ -1,12 +1,14 @@
 import { ConfigOption } from '@ngx-formly/core';
 import { FormlyEditorArrayDialog } from './types/array-dialog.type';
 import { FormlyEditorCheckbox } from './types/checkbox.type';
+import { FormlyEditorDropContainer } from './types/drop-container.type';
 import { FormlyEditorGroup } from './types/field-editor-group.type';
 import { FormlyEditorGrid } from './types/grid.type';
 import { FormlyEditorInput } from './types/input.type';
 import { FormlyEditorSelect } from './types/select.type';
 import { FormlyEditorTextarea } from './types/textarea.type';
 import { FormlyEditorMenuDialog } from './types/menu-dialog.type';
+import { FormlyEditorWarning } from './types/message.type';
 
 export function withFormlyEditorTypes(): ConfigOption {
   return {
@@ -19,6 +21,10 @@ export function withFormlyEditorTypes(): ConfigOption {
         name: 'formly-editor-checkbox',
         component: FormlyEditorCheckbox,
         defaultOptions: { parsers: [(val) => val || undefined] },
+      },
+      {
+        name: 'formly-editor-drop-container',
+        component: FormlyEditorDropContainer,
       },
       {
         name: 'formly-editor-grid',
@@ -42,6 +48,10 @@ export function withFormlyEditorTypes(): ConfigOption {
           props: { type: 'number' },
           parsers: [(val) => (val ? (parseInt(val, 10) as any) : undefined)],
         },
+      },
+      {
+        name: 'formly-editor-warning',
+        component: FormlyEditorWarning,
       },
       {
         name: 'formly-editor-select',

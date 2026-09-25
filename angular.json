@@ -260,11 +260,9 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "main": "projects/ngx-formly-designer/test.ts",
-            "tsConfig": "projects/ngx-formly-designer/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-formly-designer/karma.conf.js"
+            "tsConfig": "projects/ngx-formly-designer/tsconfig.spec.json"
           }
         },
         "lint": {
@@ -297,11 +295,9 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "main": "projects/ngx-formly-editor/test.ts",
-            "tsConfig": "projects/ngx-formly-editor/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-formly-editor/karma.conf.js"
+            "tsConfig": "projects/ngx-formly-editor/tsconfig.spec.json"
           }
         },
         "lint": {
@@ -334,7 +330,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/ngx-formly-form-loaders/tsconfig.spec.json"
           }
@@ -363,7 +359,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/ngx-formly-importers/tsconfig.spec.json"
           }
@@ -392,7 +388,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/ngx-formly-ui-base/tsconfig.spec.json"
           }
@@ -421,7 +417,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/ngx-formly-ui-editor/tsconfig.spec.json"
           }
@@ -450,7 +446,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/ngx-formly-ui-material/tsconfig.spec.json"
           }
@@ -479,7 +475,7 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/ngx-formly-ui-prime-ng/tsconfig.spec.json"
           }

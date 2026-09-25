@@ -5,45 +5,33 @@ import {
   inject,
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FieldType, FormlyField, FormlyFieldConfig } from '@ngx-formly/core';
+import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
+import { Navigation } from '@grumptech/ngx-basic-ui/navigation';
+import { Breadcrumb } from '@grumptech/ngx-basic-ui/breadcrumb';
 import { AppProps } from '../models';
 import { AppService } from '../services/app-service';
+import { FORMLY_APP_CONFIG } from '../config';
 
 @Component({
   selector: 'formly-app',
   template: `
-    @for (f of leftSideFields; track f) {
-      <formly-field [field]="f" />
-    }
+    <b-navigation
+      [urlPrefix]="appConfig.frontendBaseUrl ?? ''"
+      [menu]="appService.menu()"
+    />
     <div class="container">
-      @for (f of headerFields; track f) {
-        <formly-field [field]="f" />
-      }
-      @if (!headerFields.length) {
+      @if (appService.breadcrumbParts().length) {
+        <b-breadcrumb
+          [urlPrefix]="appConfig.frontendBaseUrl ?? ''"
+          [parts]="appService.breadcrumbParts()"
+        />
+      } @else {
         <div class="spacing"></div>
       }
-      @if (otherFields.length) {
-        <div>
-          Add fields using one of the keys leftSidebar, rightSidebar, header, or
-          footer
-        </div>
-      }
-      @for (f of otherFields; track f) {
-        <formly-field [field]="f" />
-      }
-      <div
-        class="page-container"
-        [class.flex]="headerFields.length || footerFields.length"
-      >
+      <div class="page-container">
         <router-outlet />
       </div>
-      @for (f of footerFields; track f) {
-        <formly-field [field]="f" />
-      }
     </div>
-    @for (f of rightSideFields; track f) {
-      <formly-field [field]="f" />
-    }
   `,
   styles: [
     `
@@ -60,18 +48,26 @@ import { AppService } from '../services/app-service';
 
         @include thin-scrollbars.scrollbars;
       }
+      b-navigation {
+        display: block;
+        width: 300px;
+        height: 100%;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+        @include thin-scrollbars.scrollbars;
+      }
       .page-container {
         min-height: 0;
-      }
-      .flex {
         flex: 1;
+      }
+      b-breadcrumb {
+        margin: 20px;
       }
       .spacing {
         height: 20px;
       }
     `,
   ],
-  imports: [RouterOutlet, FormlyField],
+  imports: [RouterOutlet, Navigation, Breadcrumb],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [AppService],
 })
@@ -79,28 +75,10 @@ export class FormlyApp
   extends FieldType<FormlyFieldConfig<AppProps>>
   implements OnInit
 {
-  protected leftSideFields: FormlyFieldConfig[] = [];
-  protected rightSideFields: FormlyFieldConfig[] = [];
-  protected headerFields: FormlyFieldConfig[] = [];
-  protected footerFields: FormlyFieldConfig[] = [];
-  protected otherFields: FormlyFieldConfig[] = [];
-
-  private appService = inject(AppService);
+  protected appService = inject(AppService);
+  protected appConfig = inject(FORMLY_APP_CONFIG);
 
   ngOnInit(): void {
     this.appService.initialize(this.field);
-    this.field.fieldGroup?.forEach((i) => {
-      if (i.key === 'leftSidebar') {
-        this.leftSideFields.push(i);
-      } else if (i.key === 'rightSidebar') {
-        this.rightSideFields.push(i);
-      } else if (i.key === 'header') {
-        this.headerFields.push(i);
-      } else if (i.key === 'footer') {
-        this.footerFields.push(i);
-      } else {
-        this.otherFields.push(i);
-      }
-    });
   }
 }

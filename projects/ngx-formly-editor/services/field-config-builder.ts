@@ -48,9 +48,10 @@ export class FieldConfigBuilder {
     return this;
   }
 
-  insertAfter(
+  insert(
     field: FormlyFieldConfig,
     referenceField: FormlyFieldConfig,
+    afterField = true,
   ): FieldConfigBuilder {
     const parent = this.parentByField.get(referenceField);
     if (parent?.fieldArray === referenceField) {
@@ -60,7 +61,7 @@ export class FieldConfigBuilder {
       referenceField,
       parent?.fieldGroup || this.fields,
     );
-    return this.add(field, index + 1, parent);
+    return this.add(field, index + (afterField ? 1 : 0), parent);
   }
 
   update(

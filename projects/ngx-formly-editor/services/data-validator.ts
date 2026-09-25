@@ -28,15 +28,16 @@ export class DataValidator {
     field: FormlyFieldConfig,
     messages: Map<FormlyFieldConfig, string>,
   ): void {
-    if (!this.fieldTypesReader.hasExistingType(field)) {
+    if (
+      !this.fieldTypesReader.hasExistingType(field) &&
+      !`${field.type}`.startsWith('formly-editor-')
+    ) {
       messages.set(field, `Unknown field type '${field.type}'`);
     }
     if (field.fieldGroup?.length) {
       field.fieldGroup
         ?.filter((i) => !i.key && this.fieldTypesReader.isFieldArray(i))
-        ?.forEach((i) =>
-          messages.set(i, 'Field array in a group should have a key'),
-        );
+        ?.forEach((i) => messages.set(i, 'Array in a group should have a key'));
     }
   }
 }

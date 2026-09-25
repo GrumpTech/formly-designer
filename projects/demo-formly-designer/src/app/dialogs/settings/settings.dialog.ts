@@ -6,15 +6,18 @@ import {
   MatInput,
   MatLabel,
 } from '@angular/material/input';
+import { MatDialogContent, MatDialogTitle } from '@angular/material/dialog';
 import { MatButton } from '@angular/material/button';
 import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-settings',
-  templateUrl: './settings.component.html',
-  styleUrl: './settings.component.scss',
+  templateUrl: './settings.dialog.html',
+  styleUrl: './settings.dialog.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    MatDialogTitle,
+    MatDialogContent,
     ReactiveFormsModule,
     MatFormField,
     MatLabel,
@@ -23,7 +26,7 @@ import { environment } from '../../../environments/environment';
     MatButton,
   ],
 })
-export class Settings {
+export class SettingsDialog {
   protected form = new FormGroup({
     backendUrl: new FormControl(''),
     swaggerUrl: new FormControl(''),

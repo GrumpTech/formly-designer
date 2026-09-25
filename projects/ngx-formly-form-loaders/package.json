@@ -1,6 +1,6 @@
 {
   "name": "@grumptech/ngx-formly-form-loaders",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Converts importers into a form loader service, allowing you to work directly with generated forms or pages.",
   "author": "GrumpTech",
   "license": "SEE LICENSE IN LICENSE",

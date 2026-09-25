@@ -10,10 +10,6 @@ export function generateApp(names: string[]): FormlyFieldConfig[] {
         menu: generateMenu(names),
         pages: generatePages(names),
       },
-      fieldGroup: [
-        { key: 'leftSidebar', type: 'app-navigation' },
-        { key: 'header', type: 'app-breadcrumb' },
-      ],
     },
   ];
 }

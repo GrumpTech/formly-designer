@@ -1,6 +1,6 @@
 {
   "name": "@grumptech/ngx-formly-ui-material",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A collection of components extending `@ngx-formly/material` and `@grumptech/ngx-formly-ui-base`, designed for building frontend applications.",
   "author": "GrumpTech",
   "license": "SEE LICENSE IN LICENSE",

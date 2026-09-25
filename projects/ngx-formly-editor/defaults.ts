@@ -4,7 +4,7 @@ import { defaultProperties } from './default-properties';
 import { defaultPropertiesByType } from './default-properties-by-type';
 
 export const defaultEditorConfig: EditorConfig = {
-  groupTypes: ['formly-group', 'object', 'app', 'page', 'message-container'],
+  groupTypes: ['formly-group', 'object', 'page'],
   properties: defaultProperties,
   propertiesByType: defaultPropertiesByType,
   formRenderConfig: {

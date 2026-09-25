@@ -5,8 +5,6 @@ import { ConsoleMessageService } from './services/console-message-service';
 import { HttpCacheService } from './services/http-cache-service';
 import { ActionService } from './services/action-service';
 import { FormlyApp } from './types/app.type';
-import { FormlyAppNavigation } from './types/app-navigation.type';
-import { FormlyAppBreadcrumb } from './types/app-breadcrumb.type';
 import { FormlyErrorMessage } from './types/error-message.type';
 import { FormlyMessage } from './types/message.type';
 import { FormlyMessageContainer } from './types/message-container.type';
@@ -122,8 +120,6 @@ export function withFormlyUiBase(): ConfigOption {
     types: [
       { name: 'app', component: FormlyApp },
       { name: 'app-message-container', component: FormlyAppMessageContainer },
-      { name: 'app-navigation', component: FormlyAppNavigation },
-      { name: 'app-breadcrumb', component: FormlyAppBreadcrumb },
       { name: 'error-message', component: FormlyErrorMessage },
       { name: 'message', component: FormlyMessage },
       { name: 'message-container', component: FormlyMessageContainer },

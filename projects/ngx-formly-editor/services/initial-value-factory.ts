@@ -15,19 +15,32 @@ export class InitialValueFactory {
     fields: FormlyFieldConfig[],
     defaultArraySize: 0 | 1,
   ): any {
-    const result: any = {};
+    if (fields.some((i) => i.key)) {
+      const result: any = {};
+      fields.forEach((i) => {
+        const value = this.createRecursiveForField(i, defaultArraySize);
+        if (i.key && value) {
+          result[`${i.key}`] = value;
+        }
+      });
+      return result;
+    }
+    let result: any = null;
     let arrayResult: any = null;
-    fields.forEach((i) => {
-      const value = this.createRecursiveForField(i, defaultArraySize);
-      if (i.key) {
-        result[`${i.key}`] = value;
-      } else if (typeof value === 'object') {
-        Array.isArray(value)
-          ? (arrayResult = value)
-          : Object.assign(result, value);
+    let isArray = true;
+    for (const field of fields) {
+      const value = this.createRecursiveForField(field, defaultArraySize);
+      if (value !== null && typeof value === 'object') {
+        if (Array.isArray(value)) {
+          arrayResult = value;
+        } else {
+          isArray = false;
+          result ??= {};
+          Object.assign(result, value);
+        }
       }
-    });
-    return Object.keys(result).length ? result : arrayResult;
+    }
+    return isArray ? arrayResult : result;
   }
 
   private createRecursiveForField(

@@ -35,7 +35,7 @@ interface GridProps extends FormlyFieldProps {
 
       @if (field.fieldGroup?.length) {
         <div class="grid" [style.gridTemplateColumns]="gridTemplateColumns">
-          @for (label of labels; track label) {
+          @for (label of labels; track $index) {
             <span class="header">{{ label }}</span>
           }
           @for (field of field.fieldGroup; track field; let i = $index) {

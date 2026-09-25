@@ -1,6 +1,6 @@
 {
   "name": "@grumptech/ngx-formly-ui-base",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A collection of reusable components and configuration for building frontend applications with Formly.",
   "author": "GrumpTech",
   "license": "SEE LICENSE IN LICENSE",

@@ -54,9 +54,7 @@ export class DataManager implements OnDestroy {
         configBuilder.add(i, idx, selectedField ?? undefined),
       );
     } else if (!this.formlyFieldTypes.isFieldArray(selectedField)) {
-      fields
-        .reverse()
-        .forEach((i) => configBuilder.insertAfter(i, selectedField));
+      fields.reverse().forEach((i) => configBuilder.insert(i, selectedField));
     } else if (typeof selectedField.fieldArray === 'object') {
       configBuilder.update(selectedField.fieldArray, {
         type: 'formly-group',
@@ -93,6 +91,23 @@ export class DataManager implements OnDestroy {
       configBuilder.addToFieldArray(field, target, !targetIndex);
     }
     this.update();
+  }
+
+  moveToField(
+    field: FormlyFieldConfig,
+    toField: FormlyFieldConfig,
+    afterField = true,
+  ) {
+    if (this.formlyFieldTypes.isFieldGroup(toField)) {
+      this.moveField(field, toField.fieldGroup?.length ?? 0, toField);
+      return;
+    }
+    if (field !== toField) {
+      const configBuilder = new FieldConfigBuilder().set(this.fields);
+      configBuilder.remove(field);
+      configBuilder.insert(field, toField, afterField);
+      this.update();
+    }
   }
 
   removeSelectedFields(): void {

@@ -36,7 +36,8 @@ export function jsonParseFieldsAndValidate(
   if (!parseResult.success) {
     return toFailedArrayResult(parseResult.message);
   }
-  const validationResult = validateArray(parseResult.result);
+  // quickfix: as any
+  const validationResult = validateArray(parseResult.result as any);
   if (!validationResult.valid) {
     const message = validationResult.errors
       .map((i) => createErrorMessage(i))

@@ -6,17 +6,17 @@ describe('generate-menu', () => {
   it('sorted', function () {
     const res = generateMenu(['b', 'a']);
     expect(res).to.deep.equal([
-      { name: 'a', url: 'a', children: [] },
-      { name: 'b', url: 'b', children: [] },
+      { name: 'A', url: 'a', children: [] },
+      { name: 'B', url: 'b', children: [] },
     ]);
   });
 
   it('sorted case insensitive', function () {
     const res = generateMenu(['B', 'a', 'c']);
     expect(res).to.deep.equal([
-      { name: 'a', url: 'a', children: [] },
+      { name: 'A', url: 'a', children: [] },
       { name: 'B', url: 'B', children: [] },
-      { name: 'c', url: 'c', children: [] },
+      { name: 'C', url: 'c', children: [] },
     ]);
   });
 
@@ -33,11 +33,11 @@ describe('generate-menu', () => {
     const res = generateMenu(['a/b/c']);
     expect(res).to.deep.equal([
       {
-        name: 'a',
+        name: 'A',
         children: [
           {
-            name: 'b',
-            children: [{ name: 'c', url: 'a/b/c', children: [] }],
+            name: 'B',
+            children: [{ name: 'C', url: 'a/b/c', children: [] }],
           },
         ],
       },
@@ -48,10 +48,10 @@ describe('generate-menu', () => {
     const res = generateMenu(['a/b', 'a/a']);
     expect(res).to.deep.equal([
       {
-        name: 'a',
+        name: 'A',
         children: [
-          { name: 'a', url: 'a/a', children: [] },
-          { name: 'b', url: 'a/b', children: [] },
+          { name: 'A', url: 'a/a', children: [] },
+          { name: 'B', url: 'a/b', children: [] },
         ],
       },
     ]);
@@ -61,13 +61,13 @@ describe('generate-menu', () => {
     const res = generateMenu(['a/a/a', 'a', 'a/a']);
     expect(res).to.deep.equal([
       {
-        name: 'a',
+        name: 'A',
         url: 'a',
         children: [
           {
-            name: 'a',
+            name: 'A',
             url: 'a/a',
-            children: [{ name: 'a', url: 'a/a/a', children: [] }],
+            children: [{ name: 'A', url: 'a/a/a', children: [] }],
           },
         ],
       },
@@ -78,15 +78,15 @@ describe('generate-menu', () => {
     const res = generateMenu(['a/a', 'a/b']);
     expect(res).to.deep.equal([
       {
-        name: 'a',
+        name: 'A',
         children: [
           {
-            name: 'a',
+            name: 'A',
             url: 'a/a',
             children: [],
           },
           {
-            name: 'b',
+            name: 'B',
             url: 'a/b',
             children: [],
           },

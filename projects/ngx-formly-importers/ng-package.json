@@ -3,5 +3,10 @@
   "dest": "../../dist/ngx-formly-importers",
   "lib": {
     "entryFile": "index.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@apidevtools/json-schema-ref-parser",
+    "@openapi-contrib/openapi-schema-to-json-schema",
+    "buffer"   
+  ]
 }

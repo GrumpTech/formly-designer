@@ -24,4 +24,3 @@ Formly Designer consists of these libraries:
 - [@grumptech/formly-field-validator](projects/formly-field-validator/README.md)
 - [@grumptech/formly-converters](projects/formly-converters/README.md)
 - [@grumptech/ngx-matx](https://github.com/GrumpTech/ngx-matx#ngx-matx)
-

@@ -1,6 +1,6 @@
 {
   "name": "@grumptech/ngx-formly-editor",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Part of the Formly Designer libraries. Provides the editor used by Formly Designer.",
   "author": "GrumpTech",
   "license": "SEE LICENSE IN LICENSE",

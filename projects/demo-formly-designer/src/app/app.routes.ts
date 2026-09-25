@@ -68,11 +68,6 @@ export const routes: Route[] = [
       provideFormlyDesigner(designerConfig),
     ],
   },
-  {
-    path: 'settings',
-    loadComponent: () =>
-      import('./pages/settings/settings.component').then((m) => m.Settings),
-  },
 ];
 
 function getChildRoutes(messageService: Type<IMessageService>): Routes {
@@ -98,27 +93,19 @@ function getChildRoutes(messageService: Type<IMessageService>): Routes {
       providers: [provideFormlyConfigScoped(withFormlyEditorTypes())],
     },
   ];
-  if (apiPath === '') {
-    result.push({ path: 'app', redirectTo: '/settings' });
-  } else {
-    result.push(
-      getAppRoute('app', messageService, provideFormsLoader(FormLoader)),
-    );
-  }
-  if (apiPath === '' || swaggerPath === '') {
-    result.push({ path: 'open-api-client', redirectTo: '/settings' });
-  } else {
-    result.push(
-      getAppRoute(
-        'open-api-client',
-        messageService,
-        provideFormsLoaderFromImporter({
-          url: swaggerPath,
-          importer: ExtendedOpenApiAppImporter,
-        }),
-      ),
-    );
-  }
+  result.push(
+    getAppRoute('app', messageService, provideFormsLoader(FormLoader)),
+  );
+  result.push(
+    getAppRoute(
+      'open-api-client',
+      messageService,
+      provideFormsLoaderFromImporter({
+        url: swaggerPath,
+        importer: ExtendedOpenApiAppImporter,
+      }),
+    ),
+  );
   return result;
 }
 
@@ -130,9 +117,7 @@ function getAppRoute(
   return {
     path: path,
     loadComponent: () =>
-      import('@grumptech/ngx-formly-form-loaders').then(
-        (m) => m.AppAndFormsLoader,
-      ),
+      import('./pages/wrapper/wrapper.component').then((m) => m.Wrapper),
     children: [
       {
         path: '**',

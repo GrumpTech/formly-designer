@@ -1,8 +1,7 @@
-<div class="container">
-  <h1>Settings</h1>
-  @if (!form.value.backendUrl || !form.value.swaggerUrl) {
-    <div class="warning">Enter urls.</div>
-  }
+<h2 mat-dialog-title>Settings</h2>
+<mat-dialog-content>
+  Ensure that <b>grumptech.github.io</b> is temporarily added to the backend's
+  CORS configuration. <br /><br />
   <form [formGroup]="form">
     <mat-form-field>
       <mat-label>Backend url</mat-label>
@@ -26,4 +25,4 @@
       Save
     </button>
   </div>
-</div>
+</mat-dialog-content>

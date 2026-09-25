@@ -43,8 +43,7 @@
       matIconButton
       class="settings"
       matTooltip="Settings"
-      routerLink="settings"
-      routerLinkActive="active"
+      (click)="showSettingsDialog()"
     >
       <mat-icon>settings</mat-icon>
       @if (showSettingsWarning) {

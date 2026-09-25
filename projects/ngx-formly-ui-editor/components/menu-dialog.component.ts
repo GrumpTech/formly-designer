@@ -5,6 +5,7 @@ import {
   inject,
   signal,
 } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { moveItemInArray } from '@angular/cdk/drag-drop';
 import { UntypedFormGroup } from '@angular/forms';
 import {
@@ -146,6 +147,15 @@ export class MenuDialog implements AfterViewInit {
 
   constructor() {
     this.nodes.set(this.toDragDropNodes(this.data));
+    this.dialogRef
+      .keydownEvents()
+      .pipe(takeUntilDestroyed())
+      .subscribe((event: KeyboardEvent) => {
+        if (event.key === 'Delete') {
+          event.stopImmediatePropagation();
+          this.deleteItem();
+        }
+      });
   }
 
   ngAfterViewInit() {
@@ -180,9 +190,9 @@ export class MenuDialog implements AfterViewInit {
         const index = array.indexOf(selectedItem);
         array.splice(index, 1);
       }
+      this.nodes.set(this.toDragDropNodes(this.data));
+      this.model.set(null);
     }
-    this.nodes.set(this.toDragDropNodes(this.data));
-    this.model.set(null);
   }
 
   protected selectItem(item: MenuItem): void {
@@ -246,8 +256,9 @@ export class MenuDialog implements AfterViewInit {
       return array;
     }
     for (let i = 0, l = array.length; i < l; i++) {
-      if (this.findArrayRecursive(item, array[i].children)) {
-        return array[i].children;
+      var res = this.findArrayRecursive(item, array[i].children);
+      if (res) {
+        return res;
       }
     }
     return null;

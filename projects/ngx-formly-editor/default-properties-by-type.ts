@@ -48,8 +48,6 @@ const propertiesActionType = [
 export const defaultPropertiesByType = {
   action: propertiesActionType,
   app: ['spacing', 'type', 'props.menu', 'props.pages'],
-  'app-breadcrumb': ['key', 'type'],
-  'app-navigation': ['key', 'type'],
   array: propertiesArrayType,
   boolean: defaultProperties,
   checkbox: defaultProperties,
@@ -57,7 +55,6 @@ export const defaultPropertiesByType = {
   datetimepicker: defaultProperties,
   'dialog-button': ['key', 'type', 'props.label', 'props.form', 'hide'],
   enum: propertiesWithOptions,
-  'error-message': defaultProperties,
   'formly-template': ['key', 'template'],
   grid: propertiesArrayType,
   input: defaultProperties,
@@ -67,8 +64,6 @@ export const defaultPropertiesByType = {
     .map((i) => (i === 'props.action' ? 'spacing' : i))
     .concat(['props.autoRun']),
   'formly-group': ['key', 'type', 'hide', 'props.disabled'],
-  message: defaultProperties,
-  'message-container': ['spacing', 'type'],
   number: defaultProperties,
   multicheckbox: propertiesWithOptions,
   object: [

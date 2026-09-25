@@ -1,6 +1,6 @@
 {
   "name": "@grumptech/ngx-formly-ui-editor",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A collection of components designed for use in the designer and editor of `@grumptech/formly-designer` and `@grumptech/formly-editor`.",
   "author": "GrumpTech",
   "license": "SEE LICENSE IN LICENSE",
