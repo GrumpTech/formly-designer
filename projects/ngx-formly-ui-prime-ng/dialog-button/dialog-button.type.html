@@ -1,0 +1,17 @@
+<button
+  pButton
+  type="button"
+  [disabled]="formControl.disabled"
+  (click)="showDialog()"
+  class="'default-button"
+>
+  {{ props.label }}
+</button>
+@if (visible()) {
+<formly-p-form-dialog
+  [title]="props.label ?? ''"
+  [visible]="true"
+  [form]="props.form ?? ''"
+  (onHide)="hideDialog()"
+/>
+}

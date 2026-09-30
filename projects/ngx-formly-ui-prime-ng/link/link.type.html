@@ -1,0 +1,14 @@
+@if (props.label) {
+<label [for]="id">{{ props.label }}</label>
+}
+<div>
+  <a
+    pButton
+    [id]="id"
+    [routerLink]="getUrl()"
+    [relativeTo]="route.parent"
+    class="p-button-link link-button"
+  >
+    {{ formControl.value ?? 'select' }}
+  </a>
+</div>

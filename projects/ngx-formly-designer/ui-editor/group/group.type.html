@@ -1,0 +1,8 @@
+<div class="container">
+  @for (field of field.fieldGroup; track field) {
+  <formly-field
+    [class]="field.type === 'formly-editor-textarea' ? 'textarea' : ''"
+    [field]="field"
+  />
+  }
+</div>

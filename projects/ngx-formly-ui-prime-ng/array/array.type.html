@@ -1,0 +1,37 @@
+<div>
+  {{ props.label }}
+  <div>
+    @if (showError && formControl.errors) {
+    <small class="p-error">
+      <formly-validation-message [field]="field" />
+    </small>
+    }
+  </div>
+  @if (!field.fieldGroup?.length) {
+  <div class="empty-message">{{ props.emptyArrayMessage }}</div>
+  } @for (field of field.fieldGroup; track field; let i = $index) {
+  <div class="group">
+    <formly-field [field]="field" />
+    @if (!props.readonly) {
+    <button
+      pButton
+      [disabled]="formControl.disabled"
+      icon="pi pi-trash"
+      class="p-button-outlined p-button-danger delete-button"
+      (click)="remove(i)"
+    ></button>
+    }
+  </div>
+  } @if (!props.readonly) {
+  <div>
+    <button
+      pButton
+      [disabled]="formControl.disabled"
+      class="p-button-success array-button"
+      (click)="add()"
+    >
+      {{ props.addButtonLabel ?? 'Add' }}
+    </button>
+  </div>
+  }
+</div>

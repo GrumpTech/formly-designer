@@ -1,0 +1,46 @@
+<div>
+  @if (props.label) {
+  <label>{{ props.label }}</label>
+  }
+  <div>
+    @if (showError && formControl.errors) {
+    <small class="p-error">
+      <formly-validation-message [field]="field" />
+    </small>
+    }
+  </div>
+
+  @if (field.fieldGroup?.length) {
+  <div class="grid" [style.gridTemplateColumns]="gridTemplateColumns">
+    @for (label of labels; track label) {
+    <span class="header">{{ label }}</span>
+    } @for (field of field.fieldGroup; track field; let i = $index) { @if
+    (field.fieldGroup) { @for (field of field.fieldGroup; track field) {
+    <formly-field [field]="getFieldWithoutLabel(field)" />
+    } } @else {
+    <formly-field [field]="getFieldWithoutLabel(field)" />
+    } @if (!props.readonly) {
+    <button
+      pButton
+      [disabled]="formControl.disabled"
+      icon="pi pi-trash"
+      class="p-button-outlined p-button-danger"
+      (click)="remove(i)"
+    ></button>
+    } }
+  </div>
+  } @else {
+  <div class="empty-message">{{ props.emptyArrayMessage }}</div>
+  } @if (!props.readonly) {
+  <div>
+    <button
+      pButton
+      [disabled]="formControl.disabled"
+      class="p-button-success array-button"
+      (click)="add()"
+    >
+      {{ props.addButtonLabel ?? 'Add' }}
+    </button>
+  </div>
+  }
+</div>

@@ -1,6 +1,6 @@
 {
   "name": "@grumptech/ngx-formly-ui-base",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A collection of reusable components and configuration for building frontend applications with Formly.",
   "author": "GrumpTech",
   "license": "SEE LICENSE IN LICENSE",
@@ -19,13 +19,13 @@
   },
   "homepage": "https://github.com/GrumpTech/formly-designer#readme",
   "peerDependencies": {
-    "@angular/common": ">=19.0.0",
-    "@angular/core": ">=19.0.0",
-    "@angular/forms": ">=19.0.0",
-    "@angular/router": ">=19.0.0",
-    "@ngx-formly/core": ">=7.0.0",
-    "@grumptech/ngx-basic-ui": "^1.0.0",
-    "@grumptech/formly-converters": "^1.0.3",
+    "@angular/common": ">=21.0.0",
+    "@angular/core": ">=21.0.0",
+    "@angular/forms": ">=21.0.0",
+    "@angular/router": ">=21.0.0",
+    "@ngx-formly/core": ">=8.0.0",
+    "@grumptech/formly-converters": "^2.0.0",
+    "@grumptech/ngx-basic-ui": "^1.0.8",
     "rxjs": "^7.8.2"
   },
   "dependencies": {

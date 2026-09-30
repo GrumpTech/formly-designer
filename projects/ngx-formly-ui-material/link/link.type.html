@@ -1,0 +1,9 @@
+<a
+  mat-button
+  [id]="id"
+  [routerLink]="getUrl()"
+  [relativeTo]="route.parent"
+  color="primary"
+>
+  {{ value ?? 'select' }}
+</a>

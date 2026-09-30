@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { AppLoader, PageLoader } from '@grumptech/ngx-formly-ui-base';
+import { AppLoader, PageLoader } from '@grumptech/ngx-formly-ui-base/loaders';
 import { CustomPage } from './pages/custom-page/custom-page.component';
 import { CustomApp } from './components/custom-app/custom-app.component';
 

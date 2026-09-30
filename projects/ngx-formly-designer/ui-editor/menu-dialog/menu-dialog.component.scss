@@ -1,0 +1,35 @@
+.form {
+  margin: 0 20px 0 20px;
+}
+.add-button {
+  margin-bottom: 5px;
+}
+formly-form {
+  width: 85%;
+  display: inline-block;
+}
+.delete-button {
+  margin-left: 10px;
+}
+.invisible {
+  visibility: hidden;
+}
+.tree-node-header,
+.tree-node-header--selected {
+  padding: 5px;
+  border-radius: 4px;
+  background-color: rgb(256, 256, 256, 0.8);
+
+  span {
+    color: rgb(33, 33, 33);
+  }
+  em {
+    color: rgb(99, 99, 99);
+  }
+}
+.tree-node-header--selected {
+  background-color: rgb(240, 240, 240);
+}
+[mat-dialog-actions] {
+  justify-content: flex-end;
+}

@@ -1,6 +1,6 @@
 {
   "name": "@grumptech/formly-field-validator",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Part of the Formly Designer libraries. Creates an Ajv validator from a FormlyFieldConfig, making it easy to validate Formly form definitions.",
   "author": "GrumpTech",
   "license": "SEE LICENSE IN LICENSE",
@@ -30,6 +30,6 @@
     "build:index": "tsc --declaration"
   },
   "peerDependencies": {
-    "@ngx-formly/core": "^7.1.0"
+    "@ngx-formly/core": "^8.0.0"
   }
 }

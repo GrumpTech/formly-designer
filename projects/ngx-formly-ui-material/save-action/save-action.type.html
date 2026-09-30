@@ -1,0 +1,29 @@
+@if (isEditable) {
+<button
+  mat-stroked-button
+  type="button"
+  [disabled]="formControl.disabled"
+  color="primary"
+  (click)="save()"
+>
+  {{ props.label }}
+</button>
+<button
+  mat-stroked-button
+  type="button"
+  [disabled]="formControl.disabled"
+  (click)="toggleEditable(false)"
+>
+  Cancel
+</button>
+} @else {
+<button
+  mat-stroked-button
+  type="button"
+  [disabled]="formControl.disabled"
+  color="primary"
+  (click)="toggleEditable(true)"
+>
+  Edit
+</button>
+}

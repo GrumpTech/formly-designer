@@ -1,6 +1,6 @@
 {
   "name": "@grumptech/ngx-formly-designer",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Formly Designer is a visual editor for creating Formly forms without manually writing their configuration.",
   "author": "GrumpTech",
   "license": "SEE LICENSE IN LICENSE",
@@ -19,19 +19,23 @@
   },
   "homepage": "https://github.com/GrumpTech/formly-designer#readme",
   "peerDependencies": {
-    "@angular/core": ">=19.0.0",
-    "@angular/router": ">=19.0.0",
-    "@angular/material": ">=19.0.0",
-    "@ngx-formly/core": ">=7.0.0",
-    "@grumptech/ngx-formly-editor": "^1.0.5",
-    "@grumptech/ngx-formly-ui-base": "^1.0.0",
-    "@grumptech/formly-converters": "^1.0.3",
-    "@grumptech/ngx-basic-ui": "^1.0.0",
-    "@grumptech/ngx-matx": "^1.0.0",
-    "@grumptech/ngx-formly-importers": "^1.0.0",
+    "@angular/cdk": ">=21.0.0",
+    "@angular/common": ">=21.0.0",
+    "@angular/core": ">=21.0.0",
+    "@angular/forms": ">=21.0.0",
+    "@angular/router": ">=21.0.0",
+    "@angular/material": ">=21.0.0",
+    "@ngx-formly/core": ">=8.0.0",
+    "@grumptech/formly-converters": "^2.0.0",
+    "@grumptech/ngx-matx": "^1.0.3",
+    "@grumptech/ngx-basic-ui": "^1.0.8",
     "rxjs": "^7.8.2"
   },
   "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^15.5.0",
+    "@openapi-contrib/openapi-schema-to-json-schema": "^5.1.0",
+    "buffer": "^6.0.3",
+    "json5": "^2.2.3",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

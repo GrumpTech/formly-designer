@@ -2,34 +2,30 @@ import { inject, Provider, Type } from '@angular/core';
 import { Route, Routes } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { map, of } from 'rxjs';
+import { provideFormlyConfig, provideFormlyCore } from '@ngx-formly/core';
 import { MatxConfirmationDialog } from '@grumptech/ngx-matx/confirmation-dialog';
+import { provideFormlyAppConfig } from '@grumptech/ngx-formly-ui-base/core';
+import { IMessageService } from '@grumptech/ngx-formly-ui-base/defs';
 import {
-  IMessageService,
-  provideFormlyAppConfig,
-} from '@grumptech/ngx-formly-ui-base';
-import {
-  withFormlyUiMaterial,
-  MessageService as MaterialMessageService,
-} from '@grumptech/ngx-formly-ui-material';
-import {
-  withFormlyUiPrimeNg,
-  MessageService as PrimeNgMessageService,
-} from '@grumptech/ngx-formly-ui-prime-ng';
-import { withFormlyEditorTypes } from '@grumptech/ngx-formly-ui-editor';
+  provideFormsLoader,
+  EmptyFormLoader,
+  IFormsLoader,
+} from '@grumptech/ngx-formly-ui-base/loaders';
+import { withFormlyUiMaterial } from '@grumptech/ngx-formly-ui-material';
+import { MessageService as MaterialMessageService } from '@grumptech/ngx-formly-ui-material/core';
+import { withFormlyUiPrimeNg } from '@grumptech/ngx-formly-ui-prime-ng';
+import { MessageService as PrimeNgMessageService } from '@grumptech/ngx-formly-ui-prime-ng/core';
+import { withFormlyEditorTypes } from '@grumptech/ngx-formly-designer/ui-editor';
 import {
   FormLoader,
   FormlyDesigner,
   provideFormlyDesigner,
-} from '@grumptech/ngx-formly-designer';
+} from '@grumptech/ngx-formly-designer/designer';
 import {
-  provideFormsLoader,
-  provideFormsLoaderFromImporter,
-} from '@grumptech/ngx-formly-form-loaders';
-import { ExtendedOpenApiAppImporter } from '@grumptech/ngx-formly-importers';
-import {
-  provideFormlyConfigScoped,
-  provideFormlyCoreScoped,
-} from './extensions/formly-providers';
+  provideImporter,
+  ExtendedOpenApiAppImporter,
+  FormLoaderFromImporter,
+} from '@grumptech/ngx-formly-designer/importers';
 import { designerConfig } from './config/designer-config';
 import { getApiPath, getSwaggerPath } from './methods/methods';
 
@@ -46,9 +42,10 @@ export const routes: Route[] = [
     path: 'material',
     children: getChildRoutes(MaterialMessageService),
     providers: [
-      provideFormlyCoreScoped(withFormlyUiMaterial()),
+      provideFormlyCore(withFormlyUiMaterial()),
       provideFormlyAppConfig({
         baseUrl: apiPath,
+        formLoader: EmptyFormLoader,
         frontendBaseUrl: '/material/app/',
         messageService: MaterialMessageService,
       }),
@@ -59,9 +56,10 @@ export const routes: Route[] = [
     path: 'prime-ng',
     children: getChildRoutes(PrimeNgMessageService),
     providers: [
-      provideFormlyCoreScoped(withFormlyUiPrimeNg()),
+      provideFormlyCore(withFormlyUiPrimeNg()),
       provideFormlyAppConfig({
         baseUrl: apiPath,
+        formLoader: EmptyFormLoader,
         frontendBaseUrl: '/prime-ng/app/',
         messageService: PrimeNgMessageService,
       }),
@@ -75,7 +73,9 @@ function getChildRoutes(messageService: Type<IMessageService>): Routes {
     {
       path: '',
       loadComponent: () =>
-        import('@grumptech/ngx-formly-designer').then((m) => m.FormlyDesigner),
+        import('@grumptech/ngx-formly-designer/designer').then(
+          (m) => m.FormlyDesigner,
+        ),
       canDeactivate: [
         (component: FormlyDesigner) =>
           component.hasModifiedTabs()
@@ -90,21 +90,17 @@ function getChildRoutes(messageService: Type<IMessageService>): Routes {
                 .pipe(map((confirmed) => confirmed === true))
             : of(true),
       ],
-      providers: [provideFormlyConfigScoped(withFormlyEditorTypes())],
+      providers: [provideFormlyConfig(withFormlyEditorTypes())],
     },
   ];
+  result.push(getAppRoute('app', messageService, FormLoader));
   result.push(
-    getAppRoute('app', messageService, provideFormsLoader(FormLoader)),
-  );
-  result.push(
-    getAppRoute(
-      'open-api-client',
-      messageService,
-      provideFormsLoaderFromImporter({
+    getAppRoute('open-api-client', messageService, FormLoaderFromImporter, [
+      provideImporter({
         url: swaggerPath,
         importer: ExtendedOpenApiAppImporter,
       }),
-    ),
+    ]),
   );
   return result;
 }
@@ -112,7 +108,8 @@ function getChildRoutes(messageService: Type<IMessageService>): Routes {
 function getAppRoute(
   path: string,
   messageService: Type<IMessageService>,
-  formsLoader: Provider,
+  formLoader: Type<IFormsLoader>,
+  providers: Provider = [],
 ): Route {
   return {
     path: path,
@@ -122,16 +119,20 @@ function getAppRoute(
       {
         path: '**',
         loadComponent: () =>
-          import('@grumptech/ngx-formly-ui-base').then((m) => m.PageLoader),
+          import('@grumptech/ngx-formly-ui-base/loaders').then(
+            (m) => m.PageLoader,
+          ),
       },
     ],
     providers: [
-      formsLoader,
+      providers,
       provideFormlyAppConfig({
         baseUrl: apiPath,
+        formLoader: formLoader,
         frontendBaseUrl: '',
         messageService: messageService,
       }),
+      provideFormsLoader(formLoader),
     ],
   };
 }

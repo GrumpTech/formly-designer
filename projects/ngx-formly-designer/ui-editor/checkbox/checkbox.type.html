@@ -1,0 +1,7 @@
+<mat-form-field>
+  <formly-form-field-control (containerClick)="handleContainerClick()">
+    <mat-checkbox [formControl]="formControl" [formlyAttributes]="field">
+      {{ props.label }}
+    </mat-checkbox>
+  </formly-form-field-control>
+</mat-form-field>

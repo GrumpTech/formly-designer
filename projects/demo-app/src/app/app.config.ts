@@ -4,11 +4,9 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { provideFormlyCore } from '@ngx-formly/core';
-import { provideFormlyAppConfig } from '@grumptech/ngx-formly-ui-base';
-import {
-  MessageService,
-  withFormlyUiMaterial,
-} from '@grumptech/ngx-formly-ui-material';
+import { provideFormlyAppConfig } from '@grumptech/ngx-formly-ui-base/core';
+import { withFormlyUiMaterial } from '@grumptech/ngx-formly-ui-material';
+import { MessageService } from '@grumptech/ngx-formly-ui-material/core';
 import { routes } from './app.routes';
 import { FormLoader } from './services/form-loader';
 import { CustomErrorMessage } from './types/custom-app-error/custom-error-message.type';

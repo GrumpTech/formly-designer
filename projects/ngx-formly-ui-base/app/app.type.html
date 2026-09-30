@@ -1,0 +1,17 @@
+<b-navigation
+  [urlPrefix]="appConfig.frontendBaseUrl ?? ''"
+  [menu]="appService.menu()"
+/>
+<div class="container">
+  @if (appService.breadcrumbParts().length) {
+  <b-breadcrumb
+    [urlPrefix]="appConfig.frontendBaseUrl ?? ''"
+    [parts]="appService.breadcrumbParts()"
+  />
+  } @else {
+  <div class="spacing"></div>
+  }
+  <div class="page-container">
+    <router-outlet />
+  </div>
+</div>

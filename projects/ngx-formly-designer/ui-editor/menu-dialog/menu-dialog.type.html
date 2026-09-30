@@ -1,0 +1,5 @@
+<mat-form-field floatLabel="always" class="clickable" (click)="openDialog()">
+  <mat-label>{{ props.label }}</mat-label>
+  <input matInput readonly [value]="getText()" (keydown.enter)="openDialog()" />
+  <mat-icon matSuffix>edit</mat-icon>
+</mat-form-field>

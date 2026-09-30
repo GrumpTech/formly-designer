@@ -1,0 +1,43 @@
+.grid {
+  display: grid;
+  align-items: center;
+  column-gap: 10px;
+
+  > * {
+    min-width: 0;
+  }
+}
+.header {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0 0 1px 4px;
+  font-size: 14px;
+}
+formly-field {
+  width: 100%;
+}
+.empty-message {
+  font-style: italic;
+  padding-bottom: 10px;
+}
+.add-button {
+  margin-bottom: 25px;
+}
+.drop-list {
+  position: relative;
+  height: 80%;
+  width: 20px;
+}
+.drag-indicator {
+  cursor: pointer;
+  position: absolute;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+}
+.cdk-drop-list-dragging {
+  opacity: 0.4;
+  background-color: rgb(0, 0, 0, 0.2);
+  border-radius: 4px;
+}

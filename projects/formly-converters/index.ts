@@ -9,5 +9,6 @@ export * from './src/result-methods';
 export * from './src/generators/generate-app';
 export * from './src/generators/generate-menu';
 export * from './src/generators/generate-pages';
+export * from './src/generators/constants';
 export * from './src/open-api/get-link-paths';
 export * from './src/open-api/get-array-services';

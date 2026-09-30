@@ -2,12 +2,12 @@
 
 Formly Designer is a visual editor for creating [Formly](https://formly.dev/) forms without manually writing their configuration.
 
-Instead of writing form configurations manually in code, users can:
+Instead of defining form configurations directly in code, you can
 
 - Add and arrange form fields visually.
 - Configure field properties and component behavior.
 - Import form definitions from JSON schema's or OpenApi.
-- Generate a frontend based on an OpenApi definition.
+- Generate a frontend from an OpenAPI definition.
 - Preview and test the resulting forms.
 
 The designer generates a Formly field configuration that can be used by an Angular application to render forms or frontend pages.
@@ -18,7 +18,7 @@ The designer generates a Formly field configuration that can be used by an Angul
 
 Run `npm i @grumptech/ngx-formly-designer`.
 
-### Configure
+### Configure designer
 
 First, register the components for both the application and the Formly Designer:
 
@@ -84,6 +84,31 @@ Finally, add the Formly Designer to the application's routes:
 ```
 
 The designer will then be available at `/designer`.
+
+### Configure editor
+
+The editor can also be used independently of the full designer.
+
+Use **provideFormlyEditor** to register the editor configuration.
+
+- groupTypes - Define component types that can contain child components.
+- formRenderConfig — Configure how the editor form and test form are rendered.
+- properties — Define additional properties that can be exposed in the field editor.
+- propertiesByType — Specify which properties are available for each component type.
+
+### Configure editor components
+
+Configure Formly with editor components and configuration:
+
+```typescript
+provideFormlyCore(withFormlyEditorTypes());
+```
+
+Or add the editor components and configuration to an existing Formly configuration:
+
+```typescript
+provideFormlyConfig(withFormlyEditorTypes());
+```
 
 ### Develop
 

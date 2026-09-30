@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  align-items: center;
+  column-gap: 10px;
+
+  > * {
+    min-width: 0;
+  }
+}
+.header {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0 0 1px 4px;
+}
+.empty-message {
+  font-style: italic;
+  padding-bottom: 10px;
+}
+.add-button {
+  margin-bottom: 25px;
+}

@@ -4,8 +4,8 @@ import {
   ExtendedOpenApiAppImporter,
   ExtendedOpenApiImporter,
   JsonImporter,
-} from '@grumptech/ngx-formly-importers';
-import { DesignerConfig } from '@grumptech/ngx-formly-designer';
+} from '@grumptech/ngx-formly-designer/importers';
+import { DesignerConfig } from '@grumptech/ngx-formly-designer/designer';
 import { environment } from '../../environments/environment';
 
 export const designerConfig: DesignerConfig = {

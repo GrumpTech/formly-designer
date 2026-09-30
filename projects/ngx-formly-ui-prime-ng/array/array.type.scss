@@ -1,0 +1,19 @@
+.group {
+  display: flex;
+  align-items: flex-end;
+}
+formly-field {
+  flex: 1;
+}
+.array-button {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width: auto;
+}
+.delete-button {
+  margin-left: 15px;
+}
+.empty-message {
+  font-style: italic;
+  padding-bottom: 10px;
+}

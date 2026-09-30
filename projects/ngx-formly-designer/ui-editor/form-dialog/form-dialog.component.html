@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+  <matx-full-width-form-fields>
+    <formly-form [fields]="data.fields" [form]="form" [(model)]="data.model" />
+  </matx-full-width-form-fields>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button color="primary" [mat-dialog-close]="data.model">
+    Ok
+  </button>
+  <button mat-stroked-button (click)="cancel()">Cancel</button>
+</div>

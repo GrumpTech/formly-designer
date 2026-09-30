@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AppAndFormsLoader } from '@grumptech/ngx-formly-form-loaders';
+import { AppAndFormsLoader } from '@grumptech/ngx-formly-ui-base/loaders';
 import { getApiPath, getSwaggerPath } from '../../methods/methods';
 import { ActivatedRoute } from '@angular/router';
 

@@ -1,0 +1,10 @@
+<mat-select
+  [id]="id"
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [required]="required"
+>
+  @for (item of items; track item) {
+  <mat-option [value]="item.value">{{ item.label }}</mat-option>
+  }
+</mat-select>

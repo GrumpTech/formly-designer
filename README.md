@@ -14,13 +14,10 @@ Formly Designer is dual licensed to [support](https://grumptech.github.io/produc
 Formly Designer consists of these libraries:
 
 - [@grumptech/ngx-formly-designer](projects/ngx-formly-designer/README.md)
-- [@grumptech/ngx-formly-editor](projects/ngx-formly-editor/README.md)
-- [@grumptech/ngx-formly-ui-base](projects/ngx-formly-ui-base/README.md)
 - [@grumptech/ngx-formly-ui-editor](projects/ngx-formly-ui-editor/README.md)
+- [@grumptech/ngx-formly-ui-base](projects/ngx-formly-ui-base/README.md)
 - [@grumptech/ngx-formly-ui-material](projects/ngx-formly-ui-material/README.md)
 - [@grumptech/ngx-formly-ui-prime-ng](projects/ngx-formly-ui-prime-ng/README.md)
-- [@grumptech/ngx-formly-importers](projects/ngx-formly-importers/README.md)
-- [@grumptech/ngx-formly-form-loaders](projects/ngx-formly-form-loaders/README.md)
 - [@grumptech/formly-field-validator](projects/formly-field-validator/README.md)
 - [@grumptech/formly-converters](projects/formly-converters/README.md)
 - [@grumptech/ngx-matx](https://github.com/GrumpTech/ngx-matx#ngx-matx)

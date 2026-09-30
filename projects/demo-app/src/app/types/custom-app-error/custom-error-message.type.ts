@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
-import { ErrorMessageProps } from '@grumptech/ngx-formly-ui-base';
+import { ErrorMessageProps } from '@grumptech/ngx-formly-ui-base/error-message';
 
 @Component({
   selector: 'demo-error-message',

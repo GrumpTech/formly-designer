@@ -1,0 +1,34 @@
+<div class="max-width-container">
+  @if (otherFields.length) {
+  <div>
+    Add fields using one of the keys path, query, body, result, buttons, or
+    result-buttons
+  </div>
+  } @for (f of selectionFields; track f) {
+  <formly-field [field]="f" />
+  }
+  <div class="clearfix">
+    @for (f of buttonFields; track f) {
+    <formly-field [field]="f" />
+    } @if (!buttonFields.length || hasVisibleResult()) { @for (f of
+    resultButtonFields; track f) {
+    <formly-field [field]="f" />
+    } }
+  </div>
+  @if (model.newItemUrl) {
+  <p><a [href]="model.newItemUrl">New item created</a></p>
+  } @if (model.message) {
+  <p>{{ model.message }}</p>
+  }
+</div>
+@if (resultFields.length) {
+<div class="flex-container">
+  <div class="max-width-container">
+    @for (g of resultFields; track g) {
+    <formly-field [field]="g" />
+    }
+  </div>
+</div>
+} @for (f of otherFields; track f) {
+<formly-field [field]="f" />
+}

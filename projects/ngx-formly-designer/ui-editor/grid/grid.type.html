@@ -1,0 +1,59 @@
+<div>
+  @if (props.label) {
+  <mat-label>{{ props.label }}</mat-label>
+  } @if (props.description) {
+  <mat-hint>{{ props.description }}</mat-hint>
+  } @if (showError && formControl.errors) {
+  <mat-error>
+    <formly-validation-message [field]="field" />
+  </mat-error>
+  } @if (field.fieldGroup?.length) {
+  <div
+    cdkDropListGroup
+    class="grid"
+    [style.gridTemplateColumns]="gridTemplateColumns"
+  >
+    @for (label of labels; track $index) {
+    <span class="header">{{ label }}</span>
+    } @for (field of field.fieldGroup; track field; let i = $index) { @if
+    (props.sortable) {
+    <div
+      cdkDropList
+      (cdkDropListDropped)="handleDrop($event.item.data, i)"
+      class="drop-list"
+    >
+      <mat-icon cdkDrag [cdkDragData]="i" class="drag-indicator"
+        >drag_indicator</mat-icon
+      >
+    </div>
+    } @if (field.fieldGroup) { @for (field of field.fieldGroup; track field) {
+    <formly-field [field]="getFieldWithoutLabel(field)" />
+    } } @else {
+    <formly-field [field]="getFieldWithoutLabel(field)" />
+    } @if (!props.readonly) {
+    <button
+      mat-icon-button
+      type="button"
+      [disabled]="formControl.disabled"
+      (click)="remove(i)"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+    } }
+  </div>
+  } @else {
+  <div class="empty-message">{{ props.emptyArrayMessage }}</div>
+  } @if (!props.readonly) {
+  <div>
+    <button
+      mat-stroked-button
+      type="button"
+      [disabled]="formControl.disabled"
+      (click)="add()"
+      class="add-button"
+    >
+      {{ props.addButtonLabel ?? 'Add' }}
+    </button>
+  </div>
+  }
+</div>

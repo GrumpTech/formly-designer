@@ -7,7 +7,7 @@ import {
 import { RouterOutlet } from '@angular/router';
 import { Navigation, MenuItem } from '@grumptech/ngx-basic-ui/navigation';
 import { BreadcrumbPart, Breadcrumb } from '@grumptech/ngx-basic-ui/breadcrumb';
-import { AppService } from '@grumptech/ngx-formly-ui-base';
+import { AppService } from '@grumptech/ngx-formly-ui-base/app';
 import formlyApp from '../../forms/formly-app.json';
 
 @Component({

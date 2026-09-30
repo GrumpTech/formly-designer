@@ -1,0 +1,13 @@
+<div>
+  @if (props.label) {
+  <mat-label>{{ props.label }}</mat-label>
+  } @if (props.description) {
+  <mat-hint>{{ props.description }}</mat-hint>
+  } @if (showError && formControl.errors) {
+  <mat-error>
+    <formly-validation-message [field]="field" />
+  </mat-error>
+  } @for (f of field.fieldGroup; track f) {
+  <formly-field [field]="f" />
+  }
+</div>

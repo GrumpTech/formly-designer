@@ -1,0 +1,15 @@
+<div>
+  @if (props.label) {
+  <label>{{ props.label }}</label>
+  }
+  <div>
+    @if (showError && formControl.errors) {
+    <small class="p-error">
+      <formly-validation-message [field]="field" />
+    </small>
+    }
+  </div>
+  @for (f of field.fieldGroup; track f) {
+  <formly-field [field]="f" />
+  }
+</div>

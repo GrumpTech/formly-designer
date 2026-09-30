@@ -3,5 +3,11 @@
   "dest": "../../dist/ngx-formly-designer",
   "lib": {
     "entryFile": "index.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@apidevtools/json-schema-ref-parser",
+    "@openapi-contrib/openapi-schema-to-json-schema",
+    "buffer",
+    "json5"
+  ]
 }

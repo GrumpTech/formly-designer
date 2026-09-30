@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatButton } from '@angular/material/button';
-import { AppService } from '@grumptech/ngx-formly-ui-base';
+import { AppService } from '@grumptech/ngx-formly-ui-base/app';
 
 @Component({
   selector: 'app-root',

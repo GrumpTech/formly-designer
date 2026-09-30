@@ -1,0 +1,16 @@
+<button
+  mat-stroked-button
+  type="button"
+  [disabled]="formControl.disabled"
+  (click)="run()"
+  [class]="props.method === 'delete' ? 'delete-button' : ''"
+  [color]="
+    props.method === 'delete'
+      ? 'warn'
+      : props.method === 'get'
+        ? ''
+        : 'primary'
+  "
+>
+  {{ props.label }}
+</button>

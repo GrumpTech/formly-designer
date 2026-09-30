@@ -1,0 +1,30 @@
+@if (isEditable) {
+<button
+  pButton
+  type="button"
+  [disabled]="formControl.disabled"
+  (click)="save()"
+  class="default-button"
+>
+  {{ props.label }}
+</button>
+<button
+  pButton
+  type="button"
+  [disabled]="formControl.disabled"
+  class="p-button-secondary default-button"
+  (click)="toggleEditable(false)"
+>
+  Cancel
+</button>
+} @else {
+<button
+  pButton
+  type="button"
+  [disabled]="formControl.disabled"
+  class="default-button"
+  (click)="toggleEditable(true)"
+>
+  Edit
+</button>
+}

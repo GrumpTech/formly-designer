@@ -1,0 +1,10 @@
+@if (!hidden) {
+<button
+  mat-stroked-button
+  type="button"
+  [disabled]="formControl.disabled"
+  (click)="navigateOrRun()"
+>
+  {{ props.label }}
+</button>
+}

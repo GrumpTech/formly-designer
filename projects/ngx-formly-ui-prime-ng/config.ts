@@ -1,41 +1,35 @@
-import { ConfigOption, FormlyExtension } from '@ngx-formly/core';
+import { ConfigOption } from '@ngx-formly/core';
 import { withFormlyPrimeNG } from '@ngx-formly/primeng';
 import { withFormlyFieldDatepicker } from '@ngx-formly/primeng/datepicker';
 import { withFormlyUiBase } from '@grumptech/ngx-formly-ui-base';
-import { FormlyArray } from './types/array.type';
-import { FormlyGrid } from './types/grid.type';
-import { FormlyLink } from './types/link.type';
-import { FormlyMultiSchema } from './types/multischema.type';
-import { FormlyObject } from './types/object.type';
-import { FormlyAction } from './types/action.type';
-import { FormlyLoadAction } from './types/load-action.type';
-import { FormlySaveAction } from './types/save-action.type';
-import { FormlyUrlSelect } from './types/url-select.type';
-import { FormlyDialogButton } from './types/dialog-button.type';
+import { withFormlyFieldAction } from '@grumptech/ngx-formly-ui-prime-ng/action';
+import { withFormlyFieldArray } from '@grumptech/ngx-formly-ui-prime-ng/array';
+import { withFormlyFieldDialogButton } from '@grumptech/ngx-formly-ui-prime-ng/dialog-button';
+import { withFormlyFieldGrid } from '@grumptech/ngx-formly-ui-prime-ng/grid';
+import { withFormlyFieldLink } from '@grumptech/ngx-formly-ui-prime-ng/link';
+import { withFormlyFieldLoadAction } from '@grumptech/ngx-formly-ui-prime-ng/load-action';
+import { withFormlyFieldMultischema } from '@grumptech/ngx-formly-ui-prime-ng/multischema';
+import { withFormlyFieldObject } from '@grumptech/ngx-formly-ui-prime-ng/object';
+import { withFormlyFieldSaveAction } from '@grumptech/ngx-formly-ui-prime-ng/save-action';
+import { withFormlyFieldUrlSelect } from '@grumptech/ngx-formly-ui-prime-ng/url-select';
 
 export function withFormlyUiPrimeNg(): ConfigOption[] {
   return [
-    withFormlyUiBase(),
+    ...withFormlyUiBase(),
     ...withFormlyPrimeNG(),
     withFormlyFieldDatepicker(),
+    withFormlyFieldAction(),
+    withFormlyFieldArray(),
+    withFormlyFieldDialogButton(),
+    withFormlyFieldGrid(),
+    withFormlyFieldLink(),
+    withFormlyFieldLoadAction(),
+    withFormlyFieldMultischema(),
+    withFormlyFieldObject(),
+    withFormlyFieldSaveAction(),
+    withFormlyFieldUrlSelect(),
     {
-      types: [
-        { name: 'datetimepicker', extends: 'datepicker' },
-        { name: 'array', component: FormlyArray },
-        { name: 'grid', component: FormlyGrid },
-        { name: 'link', component: FormlyLink },
-        { name: 'multischema', component: FormlyMultiSchema },
-        { name: 'object', component: FormlyObject },
-        { name: 'action', component: FormlyAction },
-        { name: 'load-action', component: FormlyLoadAction },
-        { name: 'save-action', component: FormlySaveAction },
-        { name: 'dialog-button', component: FormlyDialogButton },
-        {
-          name: 'url-select',
-          component: FormlyUrlSelect,
-          wrappers: ['form-field'],
-        },
-      ],
+      types: [{ name: 'datetimepicker', extends: 'datepicker' }],
     },
   ];
 }

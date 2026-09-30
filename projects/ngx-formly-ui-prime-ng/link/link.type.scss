@@ -1,0 +1,7 @@
+.link-button {
+  display: inline-block;
+  width: auto;
+  &:not(:hover) {
+    text-decoration: none;
+  }
+}

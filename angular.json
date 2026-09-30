@@ -20,7 +20,6 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "preserveSymlinks": true,
             "outputPath": {
               "base": "dist/demo-app"
             },
@@ -127,7 +126,6 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "preserveSymlinks": true,
             "outputPath": {
               "base": "dist/demo-formly-designer"
             },
@@ -269,99 +267,6 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": ["projects/**/*.ts", "projects/**/*.html"]
-          }
-        }
-      }
-    },
-    "ngx-formly-editor": {
-      "projectType": "library",
-      "root": "projects/ngx-formly-editor",
-      "sourceRoot": "projects/ngx-formly-editor",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:ng-packagr",
-          "options": {
-            "project": "projects/ngx-formly-editor/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngx-formly-editor/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/ngx-formly-editor/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test",
-          "options": {
-            "tsConfig": "projects/ngx-formly-editor/tsconfig.spec.json"
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": ["projects/**/*.ts", "projects/**/*.html"]
-          }
-        }
-      }
-    },
-    "ngx-formly-form-loaders": {
-      "projectType": "library",
-      "root": "projects/ngx-formly-form-loaders",
-      "sourceRoot": "projects/ngx-formly-form-loaders",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:ng-packagr",
-          "options": {
-            "project": "projects/ngx-formly-form-loaders/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngx-formly-form-loaders/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/ngx-formly-form-loaders/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test",
-          "options": {
-            "tsConfig": "projects/ngx-formly-form-loaders/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "ngx-formly-importers": {
-      "projectType": "library",
-      "root": "projects/ngx-formly-importers",
-      "sourceRoot": "projects/ngx-formly-importers",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:ng-packagr",
-          "options": {
-            "project": "projects/ngx-formly-importers/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngx-formly-importers/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/ngx-formly-importers/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test",
-          "options": {
-            "tsConfig": "projects/ngx-formly-importers/tsconfig.spec.json"
           }
         }
       }

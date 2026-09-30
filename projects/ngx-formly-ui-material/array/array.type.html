@@ -1,0 +1,40 @@
+<div>
+  @if (props.label) {
+  <mat-label>{{ props.label }}</mat-label>
+  } @if (props.description) {
+  <mat-hint>{{ props.description }}</mat-hint>
+  } @if (showError && formControl.errors) {
+  <mat-error>
+    <formly-validation-message [field]="field" />
+  </mat-error>
+  } @if (!field.fieldGroup?.length) {
+  <div class="empty-message">{{ props.emptyArrayMessage }}</div>
+  } @for (field of field.fieldGroup; track field; let i = $index) {
+  <div class="group">
+    <formly-field [field]="field" />
+    @if (!props.readonly) {
+    <button
+      mat-icon-button
+      type="button"
+      [disabled]="formControl.disabled"
+      (click)="remove(i)"
+      class="delete-button"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+    }
+  </div>
+  } @if (!props.readonly) {
+  <div>
+    <button
+      mat-stroked-button
+      type="button"
+      [disabled]="formControl.disabled"
+      (click)="add()"
+      class="add-button"
+    >
+      {{ props.addButtonLabel ?? 'Add' }}
+    </button>
+  </div>
+  }
+</div>

@@ -1,0 +1,9 @@
+<p-select
+  [id]="id"
+  [placeholder]="props.placeholder"
+  [options]="items"
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [showClear]="!props.required"
+  (onChange)="props.change && props.change(field, $event)"
+/>

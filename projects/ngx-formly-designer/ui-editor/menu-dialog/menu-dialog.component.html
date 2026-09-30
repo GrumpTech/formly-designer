@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Menu</h1>
+<div class="form">
+  <button class="add-button" mat-stroked-button (click)="addItem()">Add</button>
+  <br />
+  <matx-full-width-form-fields>
+    <formly-form [fields]="fields" [form]="form" [model]="model()" />
+  </matx-full-width-form-fields>
+  <button
+    class="delete-button"
+    [disabled]="disabled()"
+    mat-stroked-button
+    (click)="deleteItem()"
+  >
+    Delete
+  </button>
+</div>
+<div mat-dialog-content>
+  <matx-drag-drop-tree
+    [nodes]="nodes()"
+    [trackBy]="treeTrackBy"
+    (dropped)="handleDropped($event)"
+    class="tree"
+  >
+    <ng-template #headerTemplate let-data="data">
+      <div
+        (click)="selectItem(data)"
+        [class]="'tree-node-header' + (isSelected(data) ? '--selected' : '')"
+      >
+        <span title="name">{{ data.name }}&nbsp;</span>
+        <em title="url">{{ data.url }}</em>
+      </div>
+    </ng-template>
+  </matx-drag-drop-tree>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button color="primary" [mat-dialog-close]="data">
+    Ok
+  </button>
+  <button mat-stroked-button (click)="cancel()">Cancel</button>
+</div>

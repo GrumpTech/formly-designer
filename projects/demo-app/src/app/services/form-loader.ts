@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { from, map, Observable, of } from 'rxjs';
-import { IFormLoader } from '@grumptech/ngx-formly-ui-base';
+import { IFormLoader } from '@grumptech/ngx-formly-ui-base/defs';
 
 @Injectable({ providedIn: 'root' })
 export class FormLoader implements IFormLoader {

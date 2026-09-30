@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(40%, 150px), 1fr));
+  align-items: center;
+  column-gap: 10px;
+}
+formly-field {
+  min-width: 0;
+  &:empty {
+    display: block;
+  }
+  &.textarea {
+    grid-column: 1 / -1;
+  }
+}
