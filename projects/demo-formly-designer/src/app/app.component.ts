@@ -17,6 +17,7 @@ import { filter } from 'rxjs';
 import { environment } from '../environments/environment';
 import { getApiPath, getSwaggerPath } from './methods/methods';
 import { SettingsDialog } from './dialogs/settings/settings.dialog';
+import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +33,8 @@ import { SettingsDialog } from './dialogs/settings/settings.dialog';
     MatIconButton,
     MatIcon,
     MatTooltip,
+    MatMenu,
+    MatMenuTrigger,
   ],
 })
 export class App {

@@ -66,6 +66,11 @@ export const routes: Route[] = [
       provideFormlyDesigner(designerConfig),
     ],
   },
+  {
+    path: 'info',
+    loadComponent: () =>
+      import('./pages/info/info.component').then((m) => m.Info),
+  },
 ];
 
 function getChildRoutes(messageService: Type<IMessageService>): Routes {

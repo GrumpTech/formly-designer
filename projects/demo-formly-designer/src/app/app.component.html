@@ -19,25 +19,36 @@
     routerLinkActive="active"
     >OpenAPI client</a
   >
-  <a
-    mat-button
-    [routerLink]="materialLink"
-    routerLinkActive="active"
-    queryParamsHandling="preserve"
-    preserveFragment="true"
-    [disabled]="urlPrefix === '/material'"
-    class="align-right"
-    >Material</a
-  >
-  <a
-    mat-button
-    [routerLink]="primeNgLink"
-    routerLinkActive="active"
-    queryParamsHandling="preserve"
-    preserveFragment="true"
-    [disabled]="urlPrefix === '/prime-ng'"
-    >PrimeNG</a
-  >
+  <button mat-button [matMenuTriggerFor]="styleMenu" class="align-right">
+    <span>{{ urlPrefix === "/prime-ng" ? "PrimeNG" : "Material" }}</span>
+    <mat-icon iconPositionEnd>arrow_drop_down</mat-icon>
+  </button>
+  <mat-menu #styleMenu="matMenu">
+    <a
+      style="width: 100%"
+      mat-menu-item
+      mat-button
+      class="menu-item"
+      [routerLink]="materialLink"
+      queryParamsHandling="preserve"
+      preserveFragment="true"
+      [disabled]="urlPrefix === '/material'"
+    >
+      Material
+    </a>
+    <a
+      mat-menu-item
+      mat-button
+      class="menu-item"
+      [routerLink]="primeNgLink"
+      queryParamsHandling="preserve"
+      preserveFragment="true"
+      [disabled]="urlPrefix === '/prime-ng'"
+    >
+      PrimeNG
+    </a>
+  </mat-menu>
+
   @if (showSettings) {
     <a
       matIconButton
@@ -51,6 +62,9 @@
       }
     </a>
   }
+  <a matIconButton matTooltip="About Formly Designer" [routerLink]="'/info'">
+    <mat-icon>info</mat-icon>
+  </a>
 </mat-toolbar>
 <div class="container">
   <router-outlet />

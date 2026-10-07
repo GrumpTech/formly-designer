@@ -1,6 +1,6 @@
 # formly-field-validator
 
-Part of the [Formly Designer](https://github.com/GrumpTech/formly-designer#formly-designer) libraries. Creates an Ajv validator from a FormlyFieldConfig, making it easy to validate Angular Formly form definitions.
+Part of the [Formly Designer](https://github.com/GrumpTech/formly-designer#formly-designer) libraries. Creates an Ajv validator from a FormlyFieldConfig for validation of Angular Formly form definitions.
 
 ## Getting started
 

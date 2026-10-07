@@ -1,0 +1,12 @@
+.container {
+  max-width: 800px;
+  margin: 30px auto 30px auto;
+}
+
+a {
+  text-decoration: none;
+  color: #673ab7;
+  &:hover {
+    text-decoration: underline;
+  }
+}
