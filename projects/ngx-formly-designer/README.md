@@ -20,21 +20,10 @@ Run `npm i @grumptech/ngx-formly-designer`.
 
 ### Configure designer
 
-First, register the components for both the application and the Formly Designer:
+First, register the types for both the application and the Formly Designer:
 
 ```typescript
-provideFormlyCore(withFormlyUiMaterial(), withFormlyEditorTypes());
-```
-
-Next, configure the Formly application using provideFormlyAppConfig, as described in the [ngx-formly-ui-base README](/projects/ngx-formly-ui-base/README.md).
-
-**Note:** The form loader will be provided by Formly designer.
-
-```typescript
-provideFormlyAppConfig({
-  baseUrl: apiPath,
-  messageService: MaterialMessageService,
-});
+provideFormlyCore(withFormlyMaterial(), withFormlyEditorTypes());
 ```
 
 Register the Formly Designer using provideFormlyDesigner:

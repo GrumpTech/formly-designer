@@ -36,14 +36,14 @@ See [demo-app](/projects/demo-app/src/app/app.config.ts) for a complete example.
 
 The following options are available:
 
-| Option            | Required | Description                                                                                       |
-| ----------------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `baseUrl`         | Yes      | Base URL of the backend API.                                                                      |
-| `frontendBaseUrl` | No       | Base URL of the frontend application.                                                             |
-| `actions`         | No       | Replaces the default actions with the specified custom actions.                                   |
-| `converters`      | No       | Replaces the default converters with the specified custom converters.                             |
-| `formLoader`      | Yes      | Provides a form loader implementation. Required if no form loader is provided by another package. |
-| `messageService`  | No       | Provides a message service implementation. Defaults to writing messages to the console.           |
+| Option            | Required | Description                                                                             |
+| ----------------- | -------- | --------------------------------------------------------------------------------------- |
+| `baseUrl`         | Yes      | Base URL of the backend API.                                                            |
+| `formLoader`      | Yes      | Provides a form loader implementation.                                                  |
+| `frontendBaseUrl` | No       | Base URL of the frontend application.                                                   |
+| `actions`         | No       | Replaces the default actions with the specified custom actions.                         |
+| `converters`      | No       | Replaces the default converters with the specified custom converters.                   |
+| `messageService`  | No       | Provides a message service implementation. Defaults to writing messages to the console. |
 
 ### Components
 
